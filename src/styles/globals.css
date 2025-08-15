@@ -47,6 +47,10 @@ small {
   font-weight: 300;
 }
 
+  a {
+    margin-bottom: 1rem;
+  }
+
 .txtDestaque {
   font-size: 1.8rem;
 }

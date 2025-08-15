@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import styles from './page.module.css';
 
 export default function Home() {
@@ -11,6 +13,19 @@ export default function Home() {
       <small>Pequeno texto</small>
       <br />
       <div className="quadrado"></div>
+
+      <Image
+        src={'/temp/arvore.jpg'}
+        alt="Logo Next.js"
+        width={'130'}
+        height={'90'}
+        />
+
+        <Image
+        src={'/temp/arvore.jpg'}
+        alt="Logo Next.js"
+        width={1300}
+        height={900}/>
     </div>
     
   )
