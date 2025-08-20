@@ -67,6 +67,14 @@ small {
   align-items: center;
 }
 
+.containerNotFound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+}
+
 @media screen and (max-width: 960px) {
   html {
     font-size: 50%;
