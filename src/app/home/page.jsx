@@ -1,36 +1,37 @@
+import Image from 'next/image'; 
 // Importa o componente Link do Next.js para navegação entre páginas
 // O Link é superior às âncoras tradicionais pois faz pré-carregamento das páginas
 import Link from 'next/link';
 
 // Importa os estilos CSS modulares específicos para esta página
 // Os estilos são escopados apenas para este componente
-import styles from './page.module.css';
+import estilos from './page.module.css';
 
 // Componente principal da página Home
 // Exportado como default para ser o componente principal da rota /home
-export default function Home() {
+export default function PaginaInicial() {
   return (
     // Container principal da página - usa a classe CSS do módulo
-    <div className={styles.container}>
+    <div className={estilos.container}>
       
       {/* 
         CABEÇALHO DA PÁGINA 
         Contém o logo e o menu de navegação
       */}
-      <header className={styles.header}>
+      <header className={estilos.cabecalho}>
         {/* Container do logo da empresa */}
-        <div className={styles.logo}>
+        <div className={estilos.logo}>
           {/* Nome da empresa - pode ser substituído por uma imagem */}
           <h1>Pharmax</h1>
         </div>
         
         {/* Menu de navegação principal */}
-        <nav className={styles.nav}>
+        <nav className={estilos.menu}>
           {/* 
             Link para a página inicial - com classe especial para indicar página atual 
             O href aponta para a rota /home
           */}
-          <Link href="/home" className={styles.active}>Home</Link>
+          <Link href="/home" className={estilos.ativo}>Home</Link>
           
           {/* Link para a página Sobre */}
           <Link href="/sobre">Sobre</Link>
@@ -42,17 +43,17 @@ export default function Home() {
             Link para a área do usuário - com estilo diferenciado de botão
             Provavelmente leva para login/cadastro ou área logada
           */}
-          <Link href="/usuario" className={styles.userBtn}>Minha Conta</Link>
+          <Link href="/usuario" className={estilos.botaoUsuario}>Minha Conta</Link>
         </nav>
       </header>
 
       {/* 
-        SEÇÃO HERÓI (PRINCIPAL)
+        SEÇÃO PRINCIPAL
         Área de destaque com mensagem principal e campo de busca
       */}
-      <section className={styles.hero}>
-        {/* Container do conteúdo herói para centralização e limitação de largura */}
-        <div className={styles.heroContent}>
+      <section className={estilos.principal}>
+        {/* Container do conteúdo principal para centralização e limitação de largura */}
+        <div className={estilos.conteudoPrincipal}>
           {/* Título principal da página - mensagem de impacto */}
           <h2>Sua saúde em primeiro lugar</h2>
           
@@ -63,7 +64,7 @@ export default function Home() {
             CAIXA DE BUSCA
             Campo de entrada e botão para pesquisar medicamentos
           */}
-          <div className={styles.searchBox}>
+          <div className={estilos.caixaBusca}>
             {/* 
               Campo de texto para inserir o termo de busca
               Placeholder dá uma dica do que pode ser pesquisado
@@ -80,7 +81,7 @@ export default function Home() {
         SEÇÃO DE RECURSOS/DIFERENCIAIS
         Apresenta os principais benefícios de usar a plataforma
       */}
-      <section className={styles.features}>
+      <section className={estilos.recursos}>
         {/* Título da seção */}
         <h3>Por que escolher a Pharmax?</h3>
         
@@ -88,14 +89,14 @@ export default function Home() {
           Grid responsivo com os cards de recursos
           Usa CSS Grid para layout adaptável
         */}
-        <div className={styles.featureGrid}>
+        <div className={estilos.gradeRecursos}>
           {/* 
             CARD DE RECURSO 1 - Entrega Rápida
             Cada card contém um ícone, título e descrição
           */}
-          <div className={styles.featureCard}>
+          <div className={estilos.cartaoRecurso}>
             {/* Ícone representativo (usando emoji) - poderia ser substituído por SVG */}
-            <div className={styles.featureIcon}>🚚</div>
+            <div className={estilos.iconeRecurso}>🚚</div>
             
             {/* Título do recurso */}
             <h4>Entrega Rápida</h4>
@@ -105,15 +106,15 @@ export default function Home() {
           </div>
           
           {/* CARD DE RECURSO 2 - Medicamentos Originais */}
-          <div className={styles.featureCard}>
-            <div className={styles.featureIcon}>💊</div>
+          <div className={estilos.cartaoRecurso}>
+            <div className={estilos.iconeRecurso}>💊</div>
             <h4>Medicamentos Originais</h4>
             <p>Garantia de produtos autênticos e de qualidade</p>
           </div>
           
           {/* CARD DE RECURSO 3 - Preços Competitivos */}
-          <div className={styles.featureCard}>
-            <div className={styles.featureIcon}>💰</div>
+          <div className={estilos.cartaoRecurso}>
+            <div className={estilos.iconeRecurso}>💰</div>
             <h4>Preços Competitivos</h4>
             <p>Os melhores preços do mercado farmacêutico</p>
           </div>
@@ -124,7 +125,7 @@ export default function Home() {
         SEÇÃO DE PRODUTOS EM DESTAQUE
         Mostra alguns medicamentos principais para catálogo rápido
       */}
-      <section className={styles.products}>
+      <section className={estilos.produtos}>
         {/* Título da seção */}
         <h3>Medicamentos em Destaque</h3>
         
@@ -132,17 +133,17 @@ export default function Home() {
           Grid responsivo com os cards de produtos
           Layout similar ao de recursos mas com foco em produtos
         */}
-        <div className={styles.productGrid}>
+        <div className={estilos.gradeProdutos}>
           {/* 
             CARD DE PRODUTO 1 - Paracetamol
             Cada card contém imagem, nome, descrição, preço e botão de ação
           */}
-          <div className={styles.productCard}>
+          <div className={estilos.cartaoProduto}>
             {/* 
               Container para imagem do produto
               Atualmente vazio - seria preenchido dinamicamente
             */}
-            <div className={styles.productImage}></div>
+            <div className={estilos.imagemProduto}></div>
             
             {/* Nome do medicamento */}
             <h4>Paracetamol</h4>
@@ -151,27 +152,27 @@ export default function Home() {
             <p>Analgésico e antitérmico</p>
             
             {/* Preço do produto - destacado visualmente */}
-            <span className={styles.price}>R$ 12,90</span>
+            <span className={estilos.preco}>R$ 12,90</span>
             
             {/* Botão para adicionar ao carrinho de compras */}
             <button>Adicionar ao Carrinho</button>
           </div>
           
           {/* CARD DE PRODUTO 2 - Omeprazol */}
-          <div className={styles.productCard}>
-            <div className={styles.productImage}></div>
+          <div className={estilos.cartaoProduto}>
+            <div className={estilos.imagemProduto}></div>
             <h4>Omeprazol</h4>
             <p>Protetor gástrico</p>
-            <span className={styles.price}>R$ 15,50</span>
+            <span className={estilos.preco}>R$ 15,50</span>
             <button>Adicionar ao Carrinho</button>
           </div>
           
           {/* CARD DE PRODUTO 3 - Dipirona */}
-          <div className={styles.productCard}>
-            <div className={styles.productImage}></div>
+          <div className={estilos.cartaoProduto}>
+            <div className={estilos.imagemProduto}></div>
             <h4>Dipirona</h4>
             <p>Analgésico e antitérmico</p>
-            <span className={styles.price}>R$ 8,90</span>
+            <span className={estilos.preco}>R$ 8,90</span>
             <button>Adicionar ao Carrinho</button>
           </div>
         </div>
@@ -181,17 +182,17 @@ export default function Home() {
         RODAPÉ DA PÁGINA
         Contém informações de contato, links úteis e copyright
       */}
-      <footer className={styles.footer}>
+      <footer className={estilos.rodape}>
         {/* 
           Conteúdo principal do rodapé organizado em colunas
           Usa CSS Grid para layout responsivo
         */}
-        <div className={styles.footerContent}>
+        <div className={estilos.conteudoRodape}>
           {/* 
             SEÇÃO 1: Identidade da marca
             Nome da empresa e slogan/tagline
           */}
-          <div className={styles.footerSection}>
+          <div className={estilos.secaoRodape}>
             <h4>Pharmax</h4>
             <p>Sua farmácia digital de confiança</p>
           </div>
@@ -200,7 +201,7 @@ export default function Home() {
             SEÇÃO 2: Links de navegação rápida
             Links importantes para acesso rápido
           */}
-          <div className={styles.footerSection}>
+          <div className={estilos.secaoRodape}>
             <h4>Links Rápidos</h4>
             {/* Usa componente Link para as mesmas rotas do header */}
             <Link href="/home">Home</Link>
@@ -212,7 +213,7 @@ export default function Home() {
             SEÇÃO 3: Informações de contato
             E-mail e telefone para contato com a empresa
           */}
-          <div className={styles.footerSection}>
+          <div className={estilos.secaoRodape}>
             <h4>Contato</h4>
             {/* E-mail de contato - poderia ser um link mailto: */}
             <p>contato@pharmax.com</p>
@@ -226,7 +227,7 @@ export default function Home() {
           ÁREA INFERIOR DO RODAPÉ
           Direitos autorais e informações legais
         */}
-        <div className={styles.footerBottom}>
+        <div className={estilos.rodapeInferior}>
           {/* Texto de copyright com ano dinâmico (seria 2024 atualmente) */}
           <p>&copy; 2024 Pharmax - Todos os direitos reservados</p>
         </div>
