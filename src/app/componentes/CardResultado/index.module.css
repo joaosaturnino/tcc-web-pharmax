@@ -1,0 +1,70 @@
+/* Estilos base para o card de resultado */
+.card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem; /* Espaço entre a imagem e as informações */
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0; /* Borda cinza claro */
+  transition: all 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-3px); /* Efeito de levantar ao passar o mouse */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.image {
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.info {
+  flex-grow: 1; /* Faz esta área ocupar o espaço restante */
+}
+
+.nome {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2d3748; /* Cinza bem escuro */
+}
+
+.principioAtivo {
+  font-size: 0.9rem;
+  color: #718096; /* Cinza médio */
+  margin-top: 0.25rem;
+}
+
+.precoContainer {
+  margin-top: 0.75rem;
+}
+
+.precoLabel {
+  font-size: 0.8rem;
+  color: #4a5568;
+}
+
+.precoValor {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #2f855a; /* Verde */
+}
+
+.verOfertasBtn {
+  padding: 0.7rem 1.5rem;
+  background-color: #3182ce; /* Azul */
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 6px;
+  white-space: nowrap; /* Impede que o texto quebre em duas linhas */
+}
+
+/* Estilos para telas menores (celulares) */
+@media (max-width: 640px) {
+  .card {
+    flex-direction: column;
+    text-align: center;
+  }
+}

@@ -5,9 +5,10 @@ export default function Temp() {
         <div className="container">
             <h1>Acesso a telas</h1>
             <Link href={'/sobre'}>Sobre</Link>
-            <Link href={'/contato'}>Contato</Link>
+            <Link href={'/home'}>Contato</Link>
             <Link href={'./cadastro'}>Usuario</Link>
             <Link href={'./login'}>Login</Link>
+             <Link href={'./resultado'}>resultado</Link>
         
         </div>
     );

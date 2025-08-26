@@ -1,0 +1,28 @@
+/* Estilos para a página de resultados */
+.container {
+  max-width: 800px; /* Largura máxima do conteúdo */
+  margin: 0 auto; /* Centraliza na página */
+  padding: 2rem 1rem; /* Espaçamento interno */
+  background-color: #f7fafc; /* Fundo cinza bem claro */
+  min-height: 100vh; /* Garante que a cor de fundo ocupe a tela toda */
+}
+
+.header {
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 1.75rem;
+  color: #4a5568;
+}
+
+.searchTerm {
+  font-weight: bold;
+  color: #2d3748;
+}
+
+.lista {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Espaço entre cada card na lista */
+}

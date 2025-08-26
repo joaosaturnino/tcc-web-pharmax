@@ -1,0 +1,7 @@
+/* components/ListaDeResultados.module.css */
+
+.resultsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Espaçamento entre os cards */
+}
