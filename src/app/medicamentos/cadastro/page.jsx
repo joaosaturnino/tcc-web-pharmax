@@ -1,6 +1,7 @@
 'use client';
 
 import { use, useState } from 'react';
+import styles from './cadastro.module.css';
 
 function CadastroMedicamento() {
   const [nome, setNome] = useState('');
@@ -9,20 +10,22 @@ function CadastroMedicamento() {
   const [tipo, setTipo] = useState('');
   const [forma, setForma] = useState('');
   const [descricao, setDescricao] = useState('');
+  const [preco, setPreco] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Aqui você pode adicionar a lógica para enviar os dados para o backend
-    console.log({ nome, dosagem, descricao });
+    console.log({ nome, dosagem, preco, descricao });
   };
 
   return (
-    <div>
-      <h1>Cadastro de Medicamentos</h1>
+    <div className={styles.container}>
+      <h1 className={styles.titulo}>Cadastro de Medicamentos</h1>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="nome">Nome do Medicamento:</label>
+        <div className={styles.formGroup}>
+          <label className={styles.label} htmlFor="nome">Nome do Medicamento:</label>
           <input
+            className={styles.input}
             type="text"
             id="nome"
             value={nome}
@@ -30,9 +33,10 @@ function CadastroMedicamento() {
             required
           />
         </div>
-        <div>
-          <label htmlFor="dosagem">Dosagem:</label>
+        <div className={styles.formGroup}>
+          <label className={styles.label} htmlFor="dosagem">Dosagem:</label>
           <input
+            className={styles.input}
             type="text"
             id="dosagem"
             value={dosagem}
@@ -40,18 +44,40 @@ function CadastroMedicamento() {
             required
           />
         </div>
-        <div>
-          <label htmlFor="quantidade">Quantidade:</label>
+        <div className={styles.formGroup}>
+          <label className={styles.label} htmlFor="quantidade">Quantidade:</label>
           <input
+            className={styles.input}
             id="quantidade"
             value={quantidade}
             onChange={(e) => setQuantidade(e.target.value)}
             required
           />
         </div>
-        <div>
-            <label htmlFor="tipo">Tipo de Produto</label>
-            <select id="tipo" name="tipo" required>
+
+        <div className={styles.formGroup}>
+          <label className={styles.label} htmlFor="preco">Preço (R$):</label>
+          <input
+            className={styles.input}
+            type="number"
+            id="preco"
+            name="preco"
+            value={preco}
+            onChange={(e) => setPreco(e.target.value)}
+            min="0"
+            step="0.01"
+            required
+          />
+        </div>
+        <div className={styles.formGroup}>
+            <label className={styles.label} htmlFor="tipo">Tipo de Produto</label>
+            <select
+              id="tipo"
+              name="tipo"
+              required
+              value={tipo}
+              onChange={(e) => setTipo(e.target.value)}
+            >
               <option value="">Selecione o tipo</option>
               <option value="1">Alopático</option>
               <option value="2">Fitoterápico</option>
@@ -60,13 +86,18 @@ function CadastroMedicamento() {
               <option value="5">Manipulado</option>
               <option value="6">Referência</option>
               <option value="7">Similar</option>
-              onChange={(e) => setTipo(e.target.value)}
             </select>
         </div>
 
-        <div>
-         <label htmlFor="forma">Forma Farmaceutica</label>
-         <select id="forma" name="forma" required>
+        <div className={styles.formGroup}>
+         <label className={styles.label} htmlFor="forma">Forma Farmaceutica</label>
+         <select
+              id="forma"
+              name="forma"
+              required
+              value={forma}
+              onChange={(e) => setForma(e.target.value)}
+            >
               <option value="">Selecione a forma</option>
               <option value="1">Comprimido</option>
               <option value="2">Cápsula</option>
@@ -97,22 +128,13 @@ function CadastroMedicamento() {
               <option value="27">Óvulos</option>
               <option value="28">Supositórios</option>
               <option value="29">Enemas</option>
-              onChange={(e) => setForma(e.target.value)}
             </select>
         </div>
         
-        <div>
-          <label htmlFor="descricao">Descrição:</label>
-          <textarea
-            id="descricao"
-            value={descricao}
-            onChange={(e) => setDescricao(e.target.value)}
-            required
-          ></textarea>
-        </div>
+        
 
-        <div>
-          <label htmlFor ="laboratorio">Laboratório:</label>
+        <div className={styles.formGroup}>
+          <label className={styles.label} htmlFor ="laboratorio">Laboratório:</label>
           <select id="laboratorio" name="laboratorio" required>
               <option value="">Selecione o laboratório</option>
               <option value="1">Neo Química</option>
@@ -136,12 +158,24 @@ function CadastroMedicamento() {
           </select>
         </div>
 
-        <div>
-          <label htmlFor="imagem">Imagem:</label>
+        <div className={styles.formGroup}>
+          <label className={styles.label} htmlFor="descricao">Descrição:</label>
+          <textarea
+            className={styles.textarea}
+            id="descricao"
+            value={descricao}
+            onChange={(e) => setDescricao(e.target.value)}
+            required
+          ></textarea>
+        </div>
+
+        <div className={styles.formGroup}>
+          <label className={styles.label} htmlFor="imagem">Imagem:</label>
           <input type="file" id="imagem" name="imagem" accept="image/*" />
           
         </div>
-        <button type="submit">Cadastrar</button>
+        
+        <button type="submit" className={styles.bottao}>Cadastrar</button>
       </form>
     </div>
   );
