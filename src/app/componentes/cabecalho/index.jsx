@@ -3,8 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-
-import { MdFastfood, MdMenu } from 'react-icons/md';
+import { MdMenu } from 'react-icons/md';
 
 import styles from './index.module.css';
 
@@ -15,19 +14,15 @@ function Cabecalho() {
   const rota = usePathname();
 
   function ativaMenu() {
-    if (mobile === false) {
-      setMobile(true);
-    } else {
-      setMobile(false);
-    }
+    setMobile(!mobile);
   }
 
   return (
     <header className={styles.containerNav}>
       <div className={styles.menu}>
         <div>
-          <MdFastfood className={styles.icon} id="logo" />
-          <label id="titulo">BomBurguer</label>
+          {/* Substitua o caminho abaixo pela sua imagem de logo */}
+          <img src="/temp/LogoEscrita.png" alt="Logo PharmaX" className={styles.logoImg} />
         </div>
         <nav className={styles.menuGrande}>
           <Link
@@ -35,25 +30,21 @@ function Cabecalho() {
             className={rota === '/' ? styles.active : ''}
           >Home</Link>
           <Link
-            href='/produtos'
-            className={rota === '/produtos' ? styles.active : ''}
+            href='/produtos/medicamentos'
+            className={rota === '/produtos/medicamentos' ? styles.active : ''}
           >Produtos</Link>
-
           <Link
             href='/sobre'
             className={rota === '/sobre' ? styles.active : ''}
           >Sobre</Link>
-          
           <Link
-            href='/usuario/cadastro'
+            href='/medicamentos/cadastro'
             className={rota === '/usuarios/cadastro' ? styles.active : ''}
           >Cadastrar</Link>
-
           <Link
             href='/usuario/login'
             className={rota === '/usuarios/login' ? styles.active : ''}
           >Login</Link>
-
         </nav>
         <div className={styles.menuMobile}>
           <MdMenu onClick={ativaMenu} className={styles.icon} id="logo" />
