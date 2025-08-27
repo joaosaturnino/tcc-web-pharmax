@@ -1,9 +1,31 @@
+'use client';
+import { useState } from 'react';
+import styles from './page.module.css';
 
 export default function Login() {
-    return (
-        <div>
-            <h1>Login</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed ipsam ex saepe illum natus recusandae! Atque vero exercitationem consequuntur eveniet inventore asperiores dolorem doloremque laborum ea? Nostrum, deleniti. Ipsa, fugit!</p>
-        </div>
-    );
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
+
+  return (
+    <form className={styles.form}>
+      <h2>Login</h2>
+      <input
+        type="email"
+        placeholder="E-mail"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        className={styles.input}
+      />
+      <input
+        type="password"
+        placeholder="Senha"
+        value={senha}
+        onChange={(e) => setSenha(e.target.value)}
+        className={styles.input}
+      />
+      <button type="button" className={styles.button}>
+        Entrar
+      </button>
+    </form>
+  );
 }
