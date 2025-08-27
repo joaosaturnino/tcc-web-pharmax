@@ -1,418 +1,192 @@
 /* 
  * ESTILOS GERAIS DA PÁGINA
- * Define o layout básico e comportamento da página
+ * Layout principal da página
  */
 .container {
   min-height: 100vh;
-  /* Altura mínima da tela inteira */
   display: flex;
-  /* Usa flexbox para layout */
   flex-direction: column;
-  /* Organiza os itens em coluna */
 }
 
-/* 
- * CABEÇALHO
- * Estilização do header com logo e menu de navegação
- */
+/* Cabeçalho com logo e navegação */
 .header {
   display: flex;
-  /* Layout flexível */
   justify-content: space-between;
-  /* Espaço entre logo e menu */
   align-items: center;
-  /* Alinha itens verticalmente */
   padding: 1rem 2rem;
-  /* Espaçamento interno */
   background-color: #fff;
-  /* Fundo branco */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  /* Sombra suave */
 }
 
-/* Estilo do logo */
+/* Logo da empresa */
 .logo h1 {
   color: #458B00;
-  /* Azul principal */
   margin: 0;
-  /* Remove margem padrão */
 }
 
-/* Container do menu de navegação */
+/* Menu de navegação */
 .nav {
   display: flex;
-  /* Itens do menu em linha */
   gap: 1.5rem;
-  /* Espaço entre os itens */
   align-items: center;
-  /* Alinha itens verticalmente */
 }
 
-/* Links de navegação normais */
+/* Links do menu */
 .nav a {
   text-decoration: none;
-  /* Remove sublinhado */
   color: #333;
-  /* Cor do texto */
   font-weight: 500;
-  /* Peso da fonte */
   transition: color 0.3s;
-  /* Transição suave para hover */
 }
 
-/* Efeito ao passar o mouse nos links */
 .nav a:hover {
   color: #458B00;
-  /* Muda para azul */
 }
 
-/* Link ativo (página atual) */
 .active {
   color: #458B00 !important;
-  /* Azul (importante para sobrescrever) */
   font-weight: 600;
-  /* Texto mais grossinho */
 }
 
-/* Botão especial de usuário */
+/* Botão de usuário no menu */
 .userBtn {
   background-color: #458B00;
-  /* Fundo azul */
   color: white !important;
-  /* Texto branco */
   padding: 0.5rem 1rem;
-  /* Espaçamento interno */
   border-radius: 4px;
-  /* Cantos arredondados */
 }
 
-/* 
- * SEÇÃO PRINCIPAL (HERO)
- * Área de destaque com mensagem principal e busca
- */
-.hero {
-  background: linear-gradient(135deg, #458B00 0%, #A2CD5A 100%);
-  /* Gradiente azul */
-  color: white;
-  /* Texto branco */
-  padding: 4rem 2rem;
-  /* Espaçamento interno */
-  text-align: center;
-  /* Centraliza texto */
-}
-
-/* Título principal */
-/* 
- * ESTILOS GERAIS DA PÁGINA
- * Define o layout básico e comportamento da página
- */
-.container {
-  min-height: 100vh;
-  /* Altura mínima da tela inteira */
-  display: flex;
-  /* Usa flexbox para layout */
-  flex-direction: column;
-  /* Organiza os itens em coluna */
-}
-
-/* 
- * CABEÇALHO
- * Estilização do header com logo e menu de navegação
- */
-.cabecalho {
-  display: flex;
-  /* Layout flexível */
-  justify-content: space-between;
-  /* Espaço entre logo e menu */
-  align-items: center;
-  /* Alinha itens verticalmente */
-  padding: 1rem 2rem;
-  /* Espaçamento interno */
-  background-color: #fff;
-  /* Fundo branco */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  /* Sombra suave */
-}
-
-/* Estilo do logo */
-.logo h1 {
-  color: #2E86DE;
-  /* Azul principal */
-  margin: 0;
-  /* Remove margem padrão */
-}
-
-/* Container do menu de navegação */
-.menu {
-  display: flex;
-  /* Itens do menu em linha */
-  gap: 1.5rem;
-  /* Espaço entre os itens */
-  align-items: center;
-  /* Alinha itens verticalmente */
-}
-
-/* Links de navegação normais */
-.menu a {
-  text-decoration: none;
-  /* Remove sublinhado */
-  color: #333;
-  /* Cor do texto */
-  font-weight: 500;
-  /* Peso da fonte */
-  transition: color 0.3s;
-  /* Transição suave para hover */
-}
-
-/* Efeito ao passar o mouse nos links */
-.menu a:hover {
-  color: #458B00;
-  /* Muda para azul */
-}
-
-/* Link ativo (página atual) */
-.ativo {
-  color: #458B00 !important;
-  /* Azul (importante para sobrescrever) */
-  font-weight: 600;
-  /* Texto mais grossinho */
-}
-
-/* Botão especial de usuário */
-.botaoUsuario {
-  background-color: #458B00;
-  /* Fundo azul */
-  color: white !important;
-  /* Texto branco */
-  padding: 0.5rem 1rem;
-  /* Espaçamento interno */
-  border-radius: 4px;
-  /* Cantos arredondados */
-}
-
-/* 
- * SEÇÃO PRINCIPAL (HERO)
- * Área de destaque com mensagem principal e busca
- */
+/* Seção principal (hero) com mensagem e busca */
 .principal {
-  background: linear-gradient(135deg, #458B00 60%, #A2CD5A 30%);
-  /* Gradiente azul */
+  background: linear-gradient(135deg, #458B00 0%, #A2CD5A 100%);
   color: white;
-  /* Texto branco */
   padding: 4rem 2rem;
-  /* Espaçamento interno */
   text-align: center;
-  /* Centraliza texto */
 }
 
-/* Título principal */
 .principal h2 {
   font-size: 2.5rem;
-  /* Tamanho grande */
   margin-bottom: 1rem;
-  /* Espaço abaixo */
 }
 
-/* Texto descritivo */
 .principal p {
   font-size: 1.2rem;
-  /* Tamanho médio */
   margin-bottom: 2rem;
-  /* Espaço abaixo */
   opacity: 0.9;
-  /* Leve transparência */
 }
 
-/* Container da caixa de busca */
+/* Caixa de busca */
 .caixaBusca {
   display: flex;
-  /* Layout flexível */
   max-width: 500px;
-  /* Largura máxima */
   margin: 0 auto;
-  /* Centraliza horizontalmente */
 }
 
-/* Campo de entrada de texto */
 .caixaBusca input {
   flex: 1;
-  /* Ocupa todo espaço disponível */
   padding: 0.8rem;
-  /* Espaçamento interno */
   border: none;
-  /* Remove borda padrão */
   border-radius: 4px 0 0 4px;
-  /* Arredonda apenas lado esquerdo */
   font-size: 1rem;
-  /* Tamanho da fonte */
 }
 
-/* Botão de busca */
 .caixaBusca button {
   background-color: #FF9F43;
-  /* Laranja */
   color: white;
-  /* Texto branco */
   border: none;
-  /* Remove borda */
   padding: 0 1.5rem;
-  /* Espaçamento horizontal */
   border-radius: 0 4px 4px 0;
-  /* Arredonda apenas lado direito */
   cursor: pointer;
-  /* Cursor de pointer */
   font-weight: 600;
-  /* Texto em negrito */
 }
 
-/* 
- * SEÇÃO DE RECURSOS
- * Área que destaca os diferenciais da empresa
- */
+/* Seção de diferenciais da empresa */
 .recursos {
   padding: 4rem 2rem;
-  /* Espaçamento interno */
   text-align: center;
-  /* Centraliza texto */
   background-color: #f8f9fa;
-  /* Fundo cinza muito claro */
 }
 
-/* Título da seção */
 .recursos h3 {
   font-size: 2rem;
-  /* Tamanho grande */
   margin-bottom: 3rem;
-  /* Espaço abaixo */
   color: #333;
-  /* Cor do texto */
 }
 
-/* Grid dos cards de recursos */
+/* Cards de diferenciais */
 .gradeRecursos {
   display: grid;
-  /* Layout em grid */
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  /* Colunas responsivas */
   gap: 2rem;
-  /* Espaço entre os cards */
   max-width: 1200px;
-  /* Largura máxima */
   margin: 0 auto;
-  /* Centraliza */
 }
 
-/* Cartão individual de recurso */
 .cartaoRecurso {
   background: white;
-  /* Fundo branco */
   padding: 2rem;
-  /* Espaçamento interno */
   border-radius: 8px;
-  /* Cantos arredondados */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  /* Sombra suave */
   transition: transform 0.3s;
-  /* Transição suave para animação */
 }
 
-/* Efeito de levantar o card ao passar mouse */
 .cartaoRecurso:hover {
   transform: translateY(-5px);
-  /* Move 5px para cima */
 }
 
-/* Ícone do recurso */
 .iconeRecurso {
   font-size: 2.5rem;
-  /* Tamanho grande */
   margin-bottom: 1rem;
-  /* Espaço abaixo */
 }
 
-/* Título do recurso */
 .cartaoRecurso h4 {
   font-size: 1.2rem;
-  /* Tamanho médio */
   margin-bottom: 0.5rem;
-  /* Espaço abaixo */
   color: #333;
-  /* Cor do texto */
 }
 
-/* Descrição do recurso */
 .cartaoRecurso p {
   color: #666;
-  /* Cinza médio */
   line-height: 1.6;
-  /* Altura da linha para melhor leitura */
 }
 
-/* 
- * SEÇÃO DE PRODUTOS
- * Área que exibe os medicamentos em destaque
- */
+/* Seção de produtos em destaque */
 .produtos {
   padding: 4rem 2rem;
-  /* Espaçamento interno */
   text-align: center;
-  /* Centraliza texto */
 }
 
-/* Título da seção */
 .produtos h3 {
   font-size: 2rem;
-  /* Tamanho grande */
   margin-bottom: 3rem;
-  /* Espaço abaixo */
   color: #333;
-  /* Cor do texto */
 }
 
 /* Grid dos produtos */
 .gradeProdutos {
   display: grid;
-  /* Layout em grid */
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  /* Colunas responsivas */
   gap: 2rem;
-  /* Espaço entre os produtos */
   max-width: 1200px;
-  /* Largura máxima */
   margin: 0 auto;
-  /* Centraliza */
 }
 
-/* Cartão individual de produto */
+/* Card de produto */
 .cartaoProduto {
   background: white;
-  /* Fundo branco */
   border-radius: 8px;
-  /* Cantos arredondados */
   overflow: hidden;
-  /* Esconde conteúdo que ultrapassa */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  /* Sombra suave */
   transition: transform 0.3s;
-  /* Transição suave para animação */
 }
 
-/* Efeito de levantar o card ao passar mouse */
 .cartaoProduto:hover {
   transform: translateY(-5px);
-  /* Move 5px para cima */
 }
 
-/* Imagem do produto (placeholder) */
 .containerImagemProduto {
   height: 200px;
-  /* Altura fixa */
   background-color: #fff;
-  /* Cor de fundo */
-  /* Padrão de fundo para indicar imagem ausente */
-  /* background-image:
-    linear-gradient(45deg, #e3e4e8 25%, transparent 25%, transparent 75%, #e3e4e8 75%, #e3e4e8),
-    linear-gradient(45deg, #e3e4e8 25%, transparent 25%, transparent 75%, #e3e4e8 75%, #e3e4e8); */
   background-size: 20px 20px;
   background-position: 0 0, 10px 10px;
 }
@@ -423,583 +197,65 @@
   height: 100%;
 }
 
-/* Nome do produto */
 .cartaoProduto h4 {
   font-size: 1.2rem;
-  /* Tamanho médio */
   margin: 1rem 0 0.5rem;
-  /* Espaçamento */
   color: #333;
-  /* Cor do texto */
 }
 
-/* Descrição do produto */
 .cartaoProduto p {
   color: #666;
-  /* Cinza médio */
   margin-bottom: 0.5rem;
-  /* Espaço abaixo */
 }
 
-/* Preço do produto */
 .preco {
   display: block;
-  /* Exibe como bloco (quebra linha) */
   font-size: 1.3rem;
-  /* Tamanho maior */
   font-weight: 600;
-  /* Negrito */
   color: #458B00;
-  /* Azul */
   margin: 1rem 0;
-  /* Espaçamento */
 }
 
-/* Botão de adicionar ao carrinho */
 .cartaoProduto button {
   width: 100%;
-  /* Largura total */
   padding: 0.8rem;
-  /* Espaçamento interno */
   background-color: #458B00;
-  /* Azul */
   color: white;
-  /* Texto branco */
   border: none;
-  /* Remove borda */
   font-weight: 600;
-  /* Negrito */
   cursor: pointer;
-  /* Cursor de pointer */
   transition: background-color 0.3s;
-  /* Transição suave */
 }
 
-/* Efeito hover no botão */
 .cartaoProduto button:hover {
   background-color: #A2CD5A;
-  /* Azul mais escuro */
 }
 
-/* 
- * RODAPÉ
- * Área inferior com informações de contato e links
- */
-.rodape {
-  background-color: #A2CD5A;
-  /* Azul muito escuro */
-  color: white;
-  /* Texto branco */
-  padding: 2rem 0 0;
-  /* Espaçamento interno (topo apenas) */
-  margin-top: auto;
-  /* Empurra para baixo da página */
-}
-
-/* Container do conteúdo do rodapé */
-.conteudoRodape {
-  display: grid;
-  /* Layout em grid */
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  /* Colunas responsivas */
-  gap: 2rem;
-  /* Espaço entre colunas */
-  padding: 0 2rem;
-  /* Espaçamento horizontal */
-  max-width: 1200px;
-  /* Largura máxima */
-  margin: 0 auto;
-  /* Centraliza */
-}
-
-/* Seção individual do rodapé */
-.secaoRodape h4 {
-  font-size: 1.2rem;
-  /* Tamanho médio */
-  margin-bottom: 1rem;
-  /* Espaço abaixo */
-}
-
-/* Links no rodapé */
-.secaoRodape a {
-  display: block;
-  /* Exibe como bloco (um abaixo do outro) */
-  color: #ecf0f1;
-  /* Cinza muito claro */
-  text-decoration: none;
-  /* Remove sublinhado */
-  margin-bottom: 0.5rem;
-  /* Espaço abaixo */
-  transition: color 0.3s;
-  /* Transição suave */
-}
-
-/* Efeito hover nos links */
-.secaoRodape a:hover {
-  color: #2E86DE;
-  /* Muda para azul */
-}
-
-/* Área inferior do rodapé (copyright) */
-.rodapeInferior {
-  text-align: center;
-  /* Centraliza texto */
-  padding: 1.5rem;
-  /* Espaçamento interno */
-  margin-top: 2rem;
-  /* Espaço acima */
-  border-top: 1px solid #A2CD5A;
-  /* Borda superior */
-  color: #ecf0f1;
-  /* Cinza muito claro */
-  font-size: 0.9rem;
-  /* Tamanho menor */
-}
-
-/* 
- * DESIGN RESPONSIVO
- * Ajustes para telas menores (mobile)
- */
+/* Responsividade para mobile */
 @media (max-width: 768px) {
-
-  /* Header em coluna em mobile */
+  .header,
   .cabecalho {
     flex-direction: column;
-    /* Empilha verticalmente */
     padding: 1rem;
-    /* Reduz padding */
   }
-
-  /* Ajustes no menu mobile */
+  .nav,
   .menu {
     margin-top: 1rem;
-    /* Espaço acima */
     flex-wrap: wrap;
-    /* Permite quebra de linha */
     justify-content: center;
-    /* Centraliza */
   }
-
-  /* Reduz tamanho do título principal */
   .principal h2 {
     font-size: 2rem;
   }
-
-  /* Caixa de busca em coluna em mobile */
   .caixaBusca {
     flex-direction: column;
-    /* Empilha verticalmente */
   }
-
-  /* Ajustes no campo de busca */
   .caixaBusca input {
     border-radius: 4px;
-    /* Arredonda todos os cantos */
     margin-bottom: 0.5rem;
-    /* Espaço abaixo */
   }
-
-  /* Ajustes no botão de busca */
   .caixaBusca button {
     border-radius: 4px;
-    /* Arredonda todos os cantos */
     padding: 0.8rem;
-    /* Aumenta padding para melhor toque */
-  }
-}
-
-.hero h2 {
-  font-size: 2.5rem;
-  /* Tamanho grande */
-  margin-bottom: 1rem;
-  /* Espaço abaixo */
-}
-
-/* Texto descritivo */
-.hero p {
-  font-size: 1.2rem;
-  /* Tamanho médio */
-  margin-bottom: 2rem;
-  /* Espaço abaixo */
-  opacity: 0.9;
-  /* Leve transparência */
-}
-
-/* Container da caixa de busca */
-.searchBox {
-  display: flex;
-  /* Layout flexível */
-  max-width: 500px;
-  /* Largura máxima */
-  margin: 0 auto;
-  /* Centraliza horizontalmente */
-}
-
-/* Campo de entrada de texto */
-.searchBox input {
-  flex: 1;
-  /* Ocupa todo espaço disponível */
-  padding: 0.8rem;
-  /* Espaçamento interno */
-  border: none;
-  /* Remove borda padrão */
-  border-radius: 4px 0 0 4px;
-  /* Arredonda apenas lado esquerdo */
-  font-size: 1rem;
-  /* Tamanho da fonte */
-}
-
-/* Botão de busca */
-.searchBox button {
-  background-color: #FF9F43;
-  /* Laranja */
-  color: white;
-  /* Texto branco */
-  border: none;
-  /* Remove borda */
-  padding: 0 1.5rem;
-  /* Espaçamento horizontal */
-  border-radius: 0 4px 4px 0;
-  /* Arredonda apenas lado direito */
-  cursor: pointer;
-  /* Cursor de pointer */
-  font-weight: 600;
-  /* Texto em negrito */
-}
-
-/* 
- * SEÇÃO DE RECURSOS
- * Área que destaca os diferenciais da empresa
- */
-.features {
-  padding: 4rem 2rem;
-  /* Espaçamento interno */
-  text-align: center;
-  /* Centraliza texto */
-  background-color: #f8f9fa;
-  /* Fundo cinza muito claro */
-}
-
-/* Título da seção */
-.features h3 {
-  font-size: 2rem;
-  /* Tamanho grande */
-  margin-bottom: 3rem;
-  /* Espaço abaixo */
-  color: #333;
-  /* Cor do texto */
-}
-
-/* Grid dos cards de recursos */
-.featureGrid {
-  display: grid;
-  /* Layout em grid */
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  /* Colunas responsivas */
-  gap: 2rem;
-  /* Espaço entre os cards */
-  max-width: 1200px;
-  /* Largura máxima */
-  margin: 0 auto;
-  /* Centraliza */
-}
-
-/* Cartão individual de recurso */
-.featureCard {
-  background: white;
-  /* Fundo branco */
-  padding: 2rem;
-  /* Espaçamento interno */
-  border-radius: 8px;
-  /* Cantos arredondados */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  /* Sombra suave */
-  transition: transform 0.3s;
-  /* Transição suave para animação */
-}
-
-/* Efeito de levantar o card ao passar mouse */
-.featureCard:hover {
-  transform: translateY(-5px);
-  /* Move 5px para cima */
-}
-
-/* Ícone do recurso */
-.featureIcon {
-  font-size: 2.5rem;
-  /* Tamanho grande */
-  margin-bottom: 1rem;
-  /* Espaço abaixo */
-}
-
-/* Título do recurso */
-.featureCard h4 {
-  font-size: 1.2rem;
-  /* Tamanho médio */
-  margin-bottom: 0.5rem;
-  /* Espaço abaixo */
-  color: #333;
-  /* Cor do texto */
-}
-
-/* Descrição do recurso */
-.featureCard p {
-  color: #666;
-  /* Cinza médio */
-  line-height: 1.6;
-  /* Altura da linha para melhor leitura */
-}
-
-/* 
- * SEÇÃO DE PRODUTOS
- * Área que exibe os medicamentos em destaque
- */
-.products {
-  padding: 4rem 2rem;
-  /* Espaçamento interno */
-  text-align: center;
-  /* Centraliza texto */
-}
-
-/* Título da seção */
-.products h3 {
-  font-size: 2rem;
-  /* Tamanho grande */
-  margin-bottom: 3rem;
-  /* Espaço abaixo */
-  color: #333;
-  /* Cor do texto */
-}
-
-/* Grid dos produtos */
-.productGrid {
-  display: grid;
-  /* Layout em grid */
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  /* Colunas responsivas */
-  gap: 2rem;
-  /* Espaço entre os produtos */
-  max-width: 1200px;
-  /* Largura máxima */
-  margin: 0 auto;
-  /* Centraliza */
-}
-
-/* Cartão individual de produto */
-.productCard {
-  background: white;
-  /* Fundo branco */
-  border-radius: 8px;
-  /* Cantos arredondados */
-  overflow: hidden;
-  /* Esconde conteúdo que ultrapassa */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  /* Sombra suave */
-  transition: transform 0.3s;
-  /* Transição suave para animação */
-}
-
-/* Efeito de levantar o card ao passar mouse */
-.productCard:hover {
-  transform: translateY(-5px);
-  /* Move 5px para cima */
-}
-
-/* Imagem do produto (placeholder) */
-.productImage {
-  height: 200px;
-  /* Altura fixa */
-  background-color: #f1f2f6;
-  /* Cor de fundo */
-  /* Padrão de fundo para indicar imagem ausente */
-  background-image:
-    linear-gradient(45deg, #e3e4e8 25%, transparent 25%, transparent 75%, #e3e4e8 75%, #e3e4e8),
-    linear-gradient(45deg, #e3e4e8 25%, transparent 25%, transparent 75%, #e3e4e8 75%, #e3e4e8);
-  background-size: 20px 20px;
-  background-position: 0 0, 10px 10px;
-}
-
-/* Nome do produto */
-.productCard h4 {
-  font-size: 1.2rem;
-  /* Tamanho médio */
-  margin: 1rem 0 0.5rem;
-  /* Espaçamento */
-  color: #333;
-  /* Cor do texto */
-}
-
-/* Descrição do produto */
-.productCard p {
-  color: #666;
-  /* Cinza médio */
-  margin-bottom: 0.5rem;
-  /* Espaço abaixo */
-}
-
-/* Preço do produto */
-.price {
-  display: block;
-  /* Exibe como bloco (quebra linha) */
-  font-size: 1.3rem;
-  /* Tamanho maior */
-  font-weight: 600;
-  /* Negrito */
-  color: #458B00;
-  /* Azul */
-  margin: 1rem 0;
-  /* Espaçamento */
-}
-
-/* Botão de adicionar ao carrinho */
-.productCard button {
-  width: 100%;
-  /* Largura total */
-  padding: 0.8rem;
-  /* Espaçamento interno */
-  background-color: #458B00;
-  /* Azul */
-  color: white;
-  /* Texto branco */
-  border: none;
-  /* Remove borda */
-  font-weight: 600;
-  /* Negrito */
-  cursor: pointer;
-  /* Cursor de pointer */
-  transition: background-color 0.3s;
-  /* Transição suave */
-}
-
-/* Efeito hover no botão */
-.productCard button:hover {
-  background-color: #A2CD5A;
-  /* Azul mais escuro */
-}
-
-/* 
- * RODAPÉ
- * Área inferior com informações de contato e links
- */
-.footer {
-  background-color: #A2CD5A;
-  /* Azul muito escuro */
-  color: white;
-  /* Texto branco */
-  padding: 2rem 0 0;
-  /* Espaçamento interno (topo apenas) */
-  margin-top: auto;
-  /* Empurra para baixo da página */
-}
-
-/* Container do conteúdo do rodapé */
-.footerContent {
-  display: grid;
-  /* Layout em grid */
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  /* Colunas responsivas */
-  gap: 2rem;
-  /* Espaço entre colunas */
-  padding: 0 2rem;
-  /* Espaçamento horizontal */
-  max-width: 1200px;
-  /* Largura máxima */
-  margin: 0 auto;
-  /* Centraliza */
-}
-
-/* Seção individual do rodapé */
-.footerSection h4 {
-  font-size: 1.2rem;
-  /* Tamanho médio */
-  margin-bottom: 1rem;
-  /* Espaço abaixo */
-}
-
-/* Links no rodapé */
-.footerSection a {
-  display: block;
-  /* Exibe como bloco (um abaixo do outro) */
-  color: #ecf0f1;
-  /* Cinza muito claro */
-  text-decoration: none;
-  /* Remove sublinhado */
-  margin-bottom: 0.5rem;
-  /* Espaço abaixo */
-  transition: color 0.3s;
-  /* Transição suave */
-}
-
-/* Efeito hover nos links */
-.footerSection a:hover {
-  color: #458B00;
-  /* Muda para azul */
-}
-
-/* Área inferior do rodapé (copyright) */
-.footerBottom {
-  text-align: center;
-  /* Centraliza texto */
-  padding: 1.5rem;
-  /* Espaçamento interno */
-  margin-top: 2rem;
-  /* Espaço acima */
-  border-top: 1px solid #A2CD5A;
-  /* Borda superior */
-  color: #ecf0f1;
-  /* Cinza muito claro */
-  font-size: 0.9rem;
-  /* Tamanho menor */
-}
-
-/* 
- * DESIGN RESPONSIVO
- * Ajustes para telas menores (mobile)
- */
-@media (max-width: 768px) {
-
-  /* Header em coluna em mobile */
-  .header {
-    flex-direction: column;
-    /* Empilha verticalmente */
-    padding: 1rem;
-    /* Reduz padding */
-  }
-
-  /* Ajustes no menu mobile */
-  .nav {
-    margin-top: 1rem;
-    /* Espaço acima */
-    flex-wrap: wrap;
-    /* Permite quebra de linha */
-    justify-content: center;
-    /* Centraliza */
-  }
-
-  /* Reduz tamanho do título principal */
-  .hero h2 {
-    font-size: 2rem;
-  }
-
-  /* Caixa de busca em coluna em mobile */
-  .searchBox {
-    flex-direction: column;
-    /* Empilha verticalmente */
-  }
-
-  /* Ajustes no campo de busca */
-  .searchBox input {
-    border-radius: 4px;
-    /* Arredonda todos os cantos */
-    margin-bottom: 0.5rem;
-    /* Espaço abaixo */
-  }
-
-  /* Ajustes no botão de busca */
-  .searchBox button {
-    border-radius: 4px;
-    /* Arredonda todos os cantos */
-    padding: 0.8rem;
-    /* Aumenta padding para melhor toque */
   }
 }
