@@ -5,6 +5,7 @@
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  font-family: 'montserrat';
 }
 
 .containermed {
@@ -14,12 +15,14 @@
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  font-family: 'montserrat';
 }
 
 .titulo {
   text-align: center;
   margin-bottom: 24px;
-  color: #1976d2;
+  color: #3A5FCD;
+  font-family: 'montserrat';
 }
 
 .label {
@@ -59,7 +62,7 @@
 .bottao {
   width: 100%;
   padding: 10px 0;
-  background: #1976d2;
+  background: #2E8B57;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -95,7 +98,7 @@
 }
 
 .tabela th {
-  background: #1976d2;
+  background: #3A5FCD;
   color: #fff;
   font-weight: 600;
 }

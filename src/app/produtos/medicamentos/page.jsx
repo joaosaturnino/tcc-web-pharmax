@@ -56,7 +56,7 @@ function ListagemMedicamentos() {
     <div className={styles.containermed}>
       <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 24}}>
         <h1 className={styles.titulo}>Medicamentos Cadastrados</h1>
-        <Link href="/medicamentos/cadastro" className={styles.botao} style={{maxWidth: 200, textAlign: 'center', background: '#1976d2'}}>
+        <Link href="/medicamentos/cadastro" className={styles.bottao} style={{maxWidth: 200, textAlign: 'center', background: '#2E8B57'}}>
           + Novo Medicamento
         </Link>
       </div>
