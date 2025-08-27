@@ -75,6 +75,12 @@ small {
   height: 70vh;
 }
 
+
+
+html, body, * {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif !important;
+}
+
 @media screen and (max-width: 960px) {
   html {
     font-size: 50%;
