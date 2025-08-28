@@ -94,8 +94,6 @@ export default function Resultados() {
 
   const handleNovaBusca = (e) => {
     e.preventDefault();
-    // Em uma aplicação real, isso redirecionaria para a mesma página com novo parâmetro
-    // Como é apenas frontend, vamos apenas filtrar os resultados
     const input = e.target.elements.busca;
     setTermoBusca(input.value);
   };
@@ -105,7 +103,7 @@ export default function Resultados() {
       {/* Cabeçalho da página de resultados */}
       <header className={styles.cabecalho}>
         <Link href="/" className={styles.logoLink}>
-        
+          <h1></h1>
         </Link>
         
         {/* Campo de busca na página de resultados */}
@@ -161,17 +159,15 @@ export default function Resultados() {
                     {medicamento.necessitaReceita && (
                       <span className={styles.avisoReceita}>Receita Obrigatória</span>
                     )}
+                    {!medicamento.emEstoque && (
+                      <span className={styles.indisponivel}>Indisponível</span>
+                    )}
                   </div>
                 </div>
                 
                 <div className={styles.precoContainer}>
                   <span className={styles.preco}>R$ {medicamento.preco.toFixed(2)}</span>
-                  <button 
-                    className={styles.botaoAdicionar}
-                    disabled={!medicamento.emEstoque}
-                  >
-                    {medicamento.emEstoque ? 'Adicionar ao carrinho' : 'Produto esgotado'}
-                  </button>
+                  {/* Botão de adicionar ao carrinho removido */}
                 </div>
               </div>
             ))

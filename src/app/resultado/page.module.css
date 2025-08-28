@@ -5,7 +5,8 @@
 
 /* Cabeçalho */
 .cabecalho {
-background: linear-gradient(135deg, #458B00 0%, #A2CD5A 100%);  color: white;
+  background: linear-gradient(135deg, #458B00 0%, #A2CD5A 100%);
+  color: white;
   padding: 1.5rem 2rem;
   display: flex;
   align-items: center;
@@ -78,12 +79,12 @@ background: linear-gradient(135deg, #458B00 0%, #A2CD5A 100%);  color: white;
 
 .infoResultados h2 {
   font-size: 2rem;
-  color: #458B00;
+  color: #1e293b;
   margin-bottom: 0.5rem;
 }
 
 .infoResultados p {
-  color: #458B00;
+  color: #64748b;
   font-size: 1.1rem;
 }
 
@@ -145,7 +146,7 @@ background: linear-gradient(135deg, #458B00 0%, #A2CD5A 100%);  color: white;
 }
 
 .laboratorio {
-  color: #458B00;
+  color: #3b82f6;
   font-weight: 500;
   margin-bottom: 0.5rem;
   display: block;
@@ -181,40 +182,28 @@ background: linear-gradient(135deg, #458B00 0%, #A2CD5A 100%);  color: white;
   font-weight: 500;
 }
 
+.indisponivel {
+  background: #fef3c7;
+  color: #92400e;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
 .precoContainer {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 1rem;
-  min-width: 150px;
+  gap: 0.5rem;
+  min-width: 100px;
 }
 
 .preco {
   font-size: 1.5rem;
   font-weight: 700;
   color: #10b981;
-}
-
-.botaoAdicionar {
-  background: #458B00;
-  color: white;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 6px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.3s;
-  width: 100%;
-  text-align: center;
-}
-
-.botaoAdicionar:hover:not(:disabled) {
-  background: #A2CD5A;
-}
-
-.botaoAdicionar:disabled {
-  background: #9ca3af;
-  cursor: not-allowed;
+  text-align: right;
 }
 
 /* Sem resultados */
@@ -276,6 +265,10 @@ background: linear-gradient(135deg, #458B00 0%, #A2CD5A 100%);  color: white;
     width: 100%;
   }
   
+  .preco {
+    text-align: center;
+  }
+  
   .tags {
     justify-content: center;
   }
@@ -292,11 +285,6 @@ background: linear-gradient(135deg, #458B00 0%, #A2CD5A 100%);  color: white;
   
   .preco {
     font-size: 1.3rem;
-  }
-  
-  .botaoAdicionar {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
   }
   
   .semResultados {
