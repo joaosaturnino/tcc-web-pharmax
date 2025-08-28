@@ -1,23 +1,19 @@
-'use client';
-import Botao from '../componentes/botao';
+"use client";
 
-import { useState } from 'react';
-export default function Sobre() {
-    const [numero, setNumero] = useState(0);
-    return (
-        <div className="container">
-            <h1>Sobre</h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum explicabo recusandae illum perspiciatis nemo quas        doloribus aliquid at laboriosam veniam quae et odio, mollitia magni molestias necessitatibus saepe reprehenderit voluptates!
-            </p>
-            <br/>
-            <label>{numero}</label>
-            <button 
-            type="button"
-            onClick={() => setNumero(numero + 1)}
-            >Contar</button>
+import styles from "./sobre.module.css";
 
-            <Botao label={'Mais um'} acao={() => setNumero(numero + 1)} />
-                <Botao label={'Alerta'} acao={() => alert('Erro!')} />
-        </div>
-    );
+export default function SobrePage() {
+  return (
+    <div className={styles.container}>
+      <h1 className={styles.title}>Sobre o Sistema</h1>
+
+      <div className={styles.card}>
+        <p><strong>Nome do Sistema:</strong> PharmaX</p>
+        <p><strong>Versão:</strong> 1.0.0</p>
+        <p><strong>Objetivo:</strong> Facilitar a busca e comparação de preços de medicamentos em diferentes farmácias, garantindo economia e praticidade para o usuário.</p>
+        <p><strong>Desenvolvedores:</strong> Henrique Lopes e equipe de TI</p>
+        <p><strong>Contato:</strong> suporte@pharmax.com</p>
+      </div>
+    </div>
+  );
 }

@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     color:  #458B00;
-    border-bottom: 0.4rem solid  #458B00;
+    border-bottom: 0.4rem solid  #006400;
     font-size: 4.4rem;
     width: 100%;
     max-width: 144rem; 
@@ -61,7 +61,7 @@
 }
 
 .containerNav .menu .menuGrande a:hover {
-    border: 0.4rem solid#458B00;
+    border: 0.4rem solid#006400;
     color:  #458B00;
 }
 

@@ -38,13 +38,9 @@ function Cabecalho() {
             className={rota === '/sobre' ? styles.active : ''}
           >Sobre</Link>
           <Link
-            href='/medicamentos/cadastro'
-            className={rota === '/usuarios/cadastro' ? styles.active : ''}
-          >Cadastrar</Link>
-          <Link
-            href='/usuario/login'
-            className={rota === '/usuarios/login' ? styles.active : ''}
-          >Login</Link>
+            href='/usuario/perfil'
+            className={rota === '/usuario/perfil' ? styles.active : ''}
+          >Perfil</Link>
         </nav>
         <div className={styles.menuMobile}>
           <MdMenu onClick={ativaMenu} className={styles.icon} id="logo" />
@@ -61,25 +57,20 @@ function Cabecalho() {
           className={rota === '/' ? styles.active : ''}
         >Home</Link>
         <Link
-          href='/produtos'
+          href='/produtos/medicamentos'
           onClick={ativaMenu}
-          className={rota === '/produtos' ? styles.active : ''}
+          className={rota === '/produtos/medicamentos' ? styles.active : ''}
         >Produtos</Link>
-        <Link
-          href='/usuarios/cadastro'
-          onClick={ativaMenu}
-          className={rota === '/usuarios/cadastro' ? styles.active : ''}
-        >Cadastrar</Link>
         <Link
           href='/sobre'
           onClick={ativaMenu}
           className={rota === '/sobre' ? styles.active : ''}
         >Sobre</Link>
         <Link
-          href='/usuarios/login'
+          href='/usuario/perfil'
           onClick={ativaMenu}
-          className={rota === '/usuarios/login' ? styles.active : ''}
-        >Login</Link>
+          className={rota === '/usuario/perfil' ? styles.active : ''}
+        >Perfil</Link>
       </div>
     </header>
   );

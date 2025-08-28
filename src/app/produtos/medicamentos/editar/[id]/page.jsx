@@ -1,34 +1,34 @@
-'use client';
-import { useState, useEffect } from 'react';
-import { useRouter, useParams } from 'next/navigation';
-import styles from '../../../../medicamentos/cadastro/cadastro.module.css';
+"use client";
+import { useState, useEffect } from "react";
+import { useRouter, useParams } from "next/navigation";
+import styles from "../../../../medicamentos/cadastro/cadastro.module.css";
 
 // Simulação de busca (substitua por chamada real ao backend)
 const medicamentosFake = [
   {
     id: 1,
-    nome: 'Paracetamol',
-    dosagem: '500mg',
+    nome: "Paracetamol",
+    dosagem: "500mg",
     quantidade: 20,
-    preco: '12.50',
-    tipo: 'Genérico',
-    forma: 'Comprimido',
-    descricao: 'Analgésico e antitérmico.',
-    laboratorio: 'EMS',
-    imagem: ''
+    preco: "12.50",
+    tipo: "Genérico",
+    forma: "Comprimido",
+    descricao: "Analgésico e antitérmico.",
+    laboratorio: "EMS",
+    imagem: "",
   },
   {
     id: 2,
-    nome: 'Dipirona',
-    dosagem: '1g',
+    nome: "Dipirona",
+    dosagem: "1g",
     quantidade: 10,
-    preco: '8.90',
-    tipo: 'Similar',
-    forma: 'Comprimido',
-    descricao: 'Analgésico e antitérmico.',
-    laboratorio: 'Neo Química',
-    imagem: ''
-  }
+    preco: "8.90",
+    tipo: "Similar",
+    forma: "Comprimido",
+    descricao: "Analgésico e antitérmico.",
+    laboratorio: "Neo Química",
+    imagem: "",
+  },
 ];
 
 export default function EditarMedicamento() {
@@ -39,9 +39,9 @@ export default function EditarMedicamento() {
   const [medicamento, setMedicamento] = useState(null);
 
   useEffect(() => {
-    const encontrado = medicamentosFake.find(m => m.id === id);
+    const encontrado = medicamentosFake.find((m) => m.id === id);
     if (encontrado) setMedicamento(encontrado);
-    else router.push('/produtos/medicamentos');
+    else router.push("/produtos/medicamentos");
   }, [id, router]);
 
   const handleChange = (e) => {
@@ -51,19 +51,26 @@ export default function EditarMedicamento() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert('Medicamento atualizado com sucesso!');
+    alert("Medicamento atualizado com sucesso!");
     // Aqui você pode enviar para o backend
-    router.push('/produtos/medicamentos');
+    router.push("/produtos/medicamentos");
   };
 
-  if (!medicamento) return <div className={styles.container}><p>Carregando...</p></div>;
+  if (!medicamento)
+    return (
+      <div className={styles.container}>
+        <p>Carregando...</p>
+      </div>
+    );
 
   return (
     <div className={styles.container}>
       <h1 className={styles.titulo}>Editar Medicamento</h1>
       <form onSubmit={handleSubmit}>
         <div className={styles.formGroup}>
-          <label className={styles.label} htmlFor="nome">Nome do Medicamento:</label>
+          <label className={styles.label} htmlFor="nome">
+            Nome do Medicamento:
+          </label>
           <input
             className={styles.input}
             type="text"
@@ -75,7 +82,9 @@ export default function EditarMedicamento() {
           />
         </div>
         <div className={styles.formGroup}>
-          <label className={styles.label} htmlFor="dosagem">Dosagem:</label>
+          <label className={styles.label} htmlFor="dosagem">
+            Dosagem:
+          </label>
           <input
             className={styles.input}
             type="text"
@@ -87,7 +96,9 @@ export default function EditarMedicamento() {
           />
         </div>
         <div className={styles.formGroup}>
-          <label className={styles.label} htmlFor="quantidade">Quantidade:</label>
+          <label className={styles.label} htmlFor="quantidade">
+            Quantidade:
+          </label>
           <input
             className={styles.input}
             type="number"
@@ -99,7 +110,9 @@ export default function EditarMedicamento() {
           />
         </div>
         <div className={styles.formGroup}>
-          <label className={styles.label} htmlFor="preco">Preço (R$):</label>
+          <label className={styles.label} htmlFor="preco">
+            Preço (R$):
+          </label>
           <input
             className={styles.input}
             type="number"
@@ -113,7 +126,9 @@ export default function EditarMedicamento() {
           />
         </div>
         <div className={styles.formGroup}>
-          <label className={styles.label} htmlFor="tipo">Tipo de Produto</label>
+          <label className={styles.label} htmlFor="tipo">
+            Tipo de Produto
+          </label>
           <select
             id="tipo"
             name="tipo"
@@ -132,7 +147,9 @@ export default function EditarMedicamento() {
           </select>
         </div>
         <div className={styles.formGroup}>
-          <label className={styles.label} htmlFor="forma">Forma Farmacêutica</label>
+          <label className={styles.label} htmlFor="forma">
+            Forma Farmacêutica
+          </label>
           <select
             id="forma"
             name="forma"
@@ -145,12 +162,16 @@ export default function EditarMedicamento() {
             <option value="Cápsula">Cápsula</option>
             <option value="Pastilhas">Pastilhas</option>
             <option value="Drágeas">Drágeas</option>
-            <option value="Pós para Reconstituição">Pós para Reconstituição</option>
+            <option value="Pós para Reconstituição">
+              Pós para Reconstituição
+            </option>
             <option value="Gotas">Gotas</option>
             <option value="Xarope">Xarope</option>
             <option value="Solução Oral">Solução Oral</option>
             <option value="Suspensão">Suspensão</option>
-            <option value="Comprimidos Sublinguais">Comprimidos Sublinguais</option>
+            <option value="Comprimidos Sublinguais">
+              Comprimidos Sublinguais
+            </option>
             <option value="Soluções">Soluções</option>
             <option value="Suspensões Injetáveis">Suspensões Injetáveis</option>
             <option value="Soluções Tópicas">Soluções Tópicas</option>
@@ -163,7 +184,9 @@ export default function EditarMedicamento() {
             <option value="Gotas Nasais">Gotas Nasais</option>
             <option value="Colírios">Colírios</option>
             <option value="Pomadas Oftámilcas">Pomadas Oftámilcas</option>
-            <option value="Gotas Auriculares ou Otológicas">Gotas Auriculares ou Otológicas</option>
+            <option value="Gotas Auriculares ou Otológicas">
+              Gotas Auriculares ou Otológicas
+            </option>
             <option value="Pomadas Auriculares">Pomadas Auriculares</option>
             <option value="Aerosol">Aerosol</option>
             <option value="Comprimidos Vaginais">Comprimidos Vaginais</option>
@@ -173,7 +196,9 @@ export default function EditarMedicamento() {
           </select>
         </div>
         <div className={styles.formGroup}>
-          <label className={styles.label} htmlFor="laboratorio">Laboratório:</label>
+          <label className={styles.label} htmlFor="laboratorio">
+            Laboratório:
+          </label>
           <select
             id="laboratorio"
             name="laboratorio"
@@ -203,7 +228,9 @@ export default function EditarMedicamento() {
           </select>
         </div>
         <div className={styles.formGroup}>
-          <label className={styles.label} htmlFor="descricao">Descrição:</label>
+          <label className={styles.label} htmlFor="descricao">
+            Descrição:
+          </label>
           <textarea
             className={styles.textarea}
             id="descricao"
@@ -214,7 +241,9 @@ export default function EditarMedicamento() {
           ></textarea>
         </div>
         <div className={styles.formGroup}>
-          <label className={styles.label} htmlFor="imagem">Imagem (URL):</label>
+          <label className={styles.label} htmlFor="imagem">
+            Imagem (URL):
+          </label>
           <input
             className={styles.input}
             type="text"
@@ -225,7 +254,9 @@ export default function EditarMedicamento() {
             placeholder="Cole a URL da imagem"
           />
         </div>
-        <button type="submit" className={styles.bottao}>Salvar Alterações</button>
+        <button type="submit" className={styles.bottao}>
+          Salvar Alterações
+        </button>
       </form>
     </div>
   );
@@ -257,18 +288,26 @@ function ListagemMedicamentos() {
           </tr>
         </thead>
         <tbody>
-          {medicamentos.map(medicamento => (
+          {medicamentos.map((medicamento) => (
             <tr key={medicamento.id}>
               <td>{medicamento.id}</td>
               <td>{medicamento.nome}</td>
               <td>{medicamento.dosagem}</td>
               <td>{medicamento.quantidade}</td>
-              <td>{Number(medicamento.preco).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</td> {/* Adicionado */}
+              <td>
+                {Number(medicamento.preco).toLocaleString("pt-BR", {
+                  style: "currency",
+                  currency: "BRL",
+                })}
+              </td>{" "}
+              {/* Adicionado */}
               <td>{medicamento.tipo}</td>
               <td>{medicamento.forma}</td>
               <td>{medicamento.laboratorio}</td>
               <td>
-                <button onClick={() => handleEditar(medicamento.id)}>Editar</button>
+                <button onClick={() => handleEditar(medicamento.id)}>
+                  Editar
+                </button>
                 <button>Excluir</button>
               </td>
             </tr>

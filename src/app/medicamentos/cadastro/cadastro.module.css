@@ -21,7 +21,7 @@
 .titulo {
   text-align: center;
   margin-bottom: 24px;
-  color: #3A5FCD;
+  color: #27408B;
   font-family: 'montserrat';
 }
 
@@ -62,7 +62,7 @@
 .bottao {
   width: 100%;
   padding: 10px 0;
-  background: #2E8B57;
+  background: #458B00;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -72,9 +72,10 @@
   transition: background 0.2s;
 }
 
-.botao:hover {
-  background: #125ea8;
+.bottao:hover {
+  background: #006400;
 }
+
 
 .formGroup {
   margin-bottom: 18px;
@@ -98,7 +99,7 @@
 }
 
 .tabela th {
-  background: #3A5FCD;
+  background: #27408B;
   color: #fff;
   font-weight: 600;
 }

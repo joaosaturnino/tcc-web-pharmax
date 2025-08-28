@@ -1,41 +1,43 @@
-'use client';
-import Link from 'next/link';
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
-import styles from '../../../app/medicamentos/cadastro/cadastro.module.css';
+"use client";
+import Link from "next/link";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import styles from "../../../app/medicamentos/cadastro/cadastro.module.css";
 
 const imagemPadrao = "https://via.placeholder.com/60x60?text=Foto";
 
 // Util para formatar preço em BRL com fallback seguro
-const currency = typeof Intl !== 'undefined'
-  ? new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' })
-  : { format: (v) => `R$ ${Number(v).toFixed(2)}` };
+const currency =
+  typeof Intl !== "undefined"
+    ? new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" })
+    : { format: (v) => `R$ ${Number(v).toFixed(2)}` };
 
 const medicamentosIniciais = [
   {
     id: 1,
-    nome: 'Paracetamol',
-    dosagem: '500mg',
+    nome: "Paracetamol",
+    dosagem: "500mg",
     quantidade: 20,
-    tipo: 'Genérico',
-    forma: 'Comprimido',
-    descricao: 'Analgésico e antitérmico.',
-    laboratorio: 'EMS',
-    preco: 12.50, // <-- ADICIONADO
-    imagem: ''
+    tipo: "Genérico",
+    forma: "Comprimido",
+    descricao: "Analgésico e antitérmico.",
+    laboratorio: "EMS",
+    preco: 12.5, // <-- ADICIONADO
+    imagem: "",
   },
   {
     id: 2,
-    nome: 'Dipirona',
-    dosagem: '1g',
+    nome: "Dipirona",
+    dosagem: "1g",
     quantidade: 10,
-    tipo: 'Similar',
-    forma: 'Comprimido',
-    descricao: 'Analgésico e antitérmico.',
-    laboratorio: 'Neo Química',
-    preco: 8.90, // <-- ADICIONADO
-    imagem: 'https://images.unsplash.com/photo-1511174511562-5f97f4f4e0c8?auto=format&fit=facearea&w=60&h=60'
-  }
+    tipo: "Similar",
+    forma: "Comprimido",
+    descricao: "Analgésico e antitérmico.",
+    laboratorio: "Neo Química",
+    preco: 8.9, // <-- ADICIONADO
+    imagem:
+      "https://images.unsplash.com/photo-1511174511562-5f97f4f4e0c8?auto=format&fit=facearea&w=60&h=60",
+  },
 ];
 
 function ListagemMedicamentos() {
@@ -43,8 +45,8 @@ function ListagemMedicamentos() {
   const router = useRouter();
 
   const handleExcluir = (id) => {
-    if (window.confirm('Tem certeza que deseja excluir este medicamento?')) {
-      setMedicamentos(medicamentos.filter(med => med.id !== id));
+    if (window.confirm("Tem certeza que deseja excluir este medicamento?")) {
+      setMedicamentos(medicamentos.filter((med) => med.id !== id));
     }
   };
 
@@ -54,16 +56,43 @@ function ListagemMedicamentos() {
 
   return (
     <div className={styles.containermed}>
-      <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 24}}>
-        <h1 className={styles.titulo}>Medicamentos Cadastrados</h1>
-        <Link href="/medicamentos/cadastro" className={styles.bottao} style={{maxWidth: 200, textAlign: 'center', background: '#2E8B57'}}>
+      <h1 className={styles.titulo}>Medicamentos Cadastrados</h1>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          marginBottom: 24,
+        }}
+      >
+        <Link
+          href="../../farmacias/cadastro/funcionario"
+          className={styles.bottao}
+          style={{ maxWidth: 200, textAlign: "center" }}
+        >
+          + Novo Funcionario
+        </Link>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          marginBottom: 24,
+        }}
+      >
+        <Link
+          href="/medicamentos/cadastro"
+          className={styles.bottao}
+          style={{ maxWidth: 200, textAlign: "center" }}
+        >
           + Novo Medicamento
         </Link>
       </div>
       {medicamentos.length === 0 ? (
-        <p style={{textAlign: 'center'}}>Nenhum medicamento cadastrado.</p>
+        <p style={{ textAlign: "center" }}>Nenhum medicamento cadastrado.</p>
       ) : (
-        <div style={{overflowX: 'auto'}}>
+        <div style={{ overflowX: "auto" }}>
           <table className={styles.tabela}>
             <thead>
               <tr>
@@ -75,7 +104,6 @@ function ListagemMedicamentos() {
                 <th>Tipo</th>
                 <th>Forma</th>
                 <th>Laboratório</th>
-                
                 <th>Ações</th>
               </tr>
             </thead>
@@ -86,23 +114,29 @@ function ListagemMedicamentos() {
                     <img
                       src={med.imagem || imagemPadrao}
                       alt={med.nome}
-                      style={{ width: 60, height: 60, objectFit: 'cover', borderRadius: 8, border: '1px solid #eee' }}
+                      style={{
+                        width: 60,
+                        height: 60,
+                        objectFit: "cover",
+                        borderRadius: 8,
+                        border: "1px solid #eee",
+                      }}
                     />
                   </td>
                   <td>{med.nome}</td>
                   <td>{med.dosagem}</td>
                   <td>{med.quantidade}</td>
-                  <td style={{ textAlign: 'right', whiteSpace: 'nowrap' }}>
+                  <td style={{ textAlign: "right", whiteSpace: "nowrap" }}>
                     {currency.format(Number(med.preco ?? 0))}
                   </td>
                   <td>{med.tipo}</td>
                   <td>{med.forma}</td>
                   <td>{med.laboratorio}</td>
-                  
+
                   <td>
                     <button
                       className={styles.botao}
-                      style={{ marginRight: 8, background: '#ffa726' }}
+                      style={{ marginRight: 8, background: "#CDCD00" }}
                       title="Editar"
                       onClick={() => handleEditar(med.id)}
                     >
@@ -110,7 +144,7 @@ function ListagemMedicamentos() {
                     </button>
                     <button
                       className={styles.botao}
-                      style={{ background: '#e53935' }}
+                      style={{ background: "#e53935" }}
                       title="Excluir"
                       onClick={() => handleExcluir(med.id)}
                     >
@@ -128,5 +162,3 @@ function ListagemMedicamentos() {
 }
 
 export default ListagemMedicamentos;
-
-/* CSS Adicional - cadastro.module.css */
