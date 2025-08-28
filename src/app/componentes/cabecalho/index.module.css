@@ -61,8 +61,9 @@
 }
 
 .containerNav .menu .menuGrande a:hover {
-    border: 0.4rem solid#006400;
+    border: 0.1rem solid#006400;
     color:  #458B00;
+    border-radius: 1.4rem;
 }
 
 .containerNav .menu .menuGrande a.active {
