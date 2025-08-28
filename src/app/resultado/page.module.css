@@ -209,7 +209,7 @@ background: linear-gradient(135deg, #458B00 0%, #A2CD5A 100%);  color: white;
 }
 
 .botaoAdicionar:hover:not(:disabled) {
-  background: #2563eb;
+  background: #A2CD5A;
 }
 
 .botaoAdicionar:disabled {
