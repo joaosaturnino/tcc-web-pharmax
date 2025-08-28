@@ -32,7 +32,7 @@ function Cabecalho() {
           <Link
             href='/produtos/medicamentos'
             className={rota === '/produtos/medicamentos' ? styles.active : ''}
-          >Produtos</Link>
+          >Cadastros</Link>
           <Link
             href='/sobre'
             className={rota === '/sobre' ? styles.active : ''}

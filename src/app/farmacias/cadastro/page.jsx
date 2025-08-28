@@ -13,7 +13,7 @@ export default function CadastroFarmacia() {
     telefone: "",
     email: "",
     senha: "",
-    logo: null, // vai guardar o File
+    logo: null,
   });
 
   const [preview, setPreview] = useState(null);
@@ -27,26 +27,21 @@ export default function CadastroFarmacia() {
     const file = e.target.files[0];
     if (file) {
       setFarmacia({ ...farmacia, logo: file });
-      setPreview(URL.createObjectURL(file)); // gera preview temporário
+      setPreview(URL.createObjectURL(file));
     }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Se for enviar para backend: usar FormData
-    const formData = new FormData();
-    formData.append("nome", farmacia.nome);
-    formData.append("cnpj", farmacia.cnpj);
-    formData.append("endereco", farmacia.endereco);
-    formData.append("telefone", farmacia.telefone);
-    formData.append("email", farmacia.email);
-    formData.append("senha", farmacia.senha);
-    if (farmacia.logo) formData.append("logo", farmacia.logo);
+    // Salvando no localStorage
+    const dadosFarmacia = { ...farmacia, logo: preview };
+    localStorage.setItem("farmacia", JSON.stringify(dadosFarmacia));
 
     alert("Farmácia cadastrada com sucesso!");
-    // Aqui você pode fazer fetch POST para API: fetch('/api/farmacias', { method: 'POST', body: formData })
-    router.push("/farmacias"); // volta para listagem
+
+    // Redireciona para o perfil
+    router.push("/farmacia/perfil");
   };
 
   return (
@@ -54,13 +49,10 @@ export default function CadastroFarmacia() {
       <h1 className={styles.titulo}>Cadastro de Farmácia</h1>
       <form onSubmit={handleSubmit} className={styles.form}>
         <div className={styles.formGroup}>
-          <label className={styles.label} htmlFor="nome">
-            Nome da Farmácia:
-          </label>
+          <label className={styles.label}>Nome:</label>
           <input
             className={styles.input}
             type="text"
-            id="nome"
             name="nome"
             value={farmacia.nome}
             onChange={handleChange}
@@ -69,29 +61,22 @@ export default function CadastroFarmacia() {
         </div>
 
         <div className={styles.formGroup}>
-          <label className={styles.label} htmlFor="cnpj">
-            CNPJ:
-          </label>
+          <label className={styles.label}>CNPJ:</label>
           <input
             className={styles.input}
             type="text"
-            id="cnpj"
             name="cnpj"
             value={farmacia.cnpj}
             onChange={handleChange}
-            placeholder="00.000.000/0000-00"
             required
           />
         </div>
 
         <div className={styles.formGroup}>
-          <label className={styles.label} htmlFor="endereco">
-            Endereço:
-          </label>
+          <label className={styles.label}>Endereço:</label>
           <input
             className={styles.input}
             type="text"
-            id="endereco"
             name="endereco"
             value={farmacia.endereco}
             onChange={handleChange}
@@ -100,28 +85,21 @@ export default function CadastroFarmacia() {
         </div>
 
         <div className={styles.formGroup}>
-          <label className={styles.label} htmlFor="telefone">
-            Telefone:
-          </label>
+          <label className={styles.label}>Telefone:</label>
           <input
             className={styles.input}
             type="tel"
-            id="telefone"
             name="telefone"
             value={farmacia.telefone}
             onChange={handleChange}
-            placeholder="(00) 0000-0000"
           />
         </div>
 
         <div className={styles.formGroup}>
-          <label className={styles.label} htmlFor="email">
-            E-mail:
-          </label>
+          <label className={styles.label}>E-mail:</label>
           <input
             className={styles.input}
             type="email"
-            id="email"
             name="email"
             value={farmacia.email}
             onChange={handleChange}
@@ -129,15 +107,11 @@ export default function CadastroFarmacia() {
           />
         </div>
 
-        {/* 🔑 Campo de Senha */}
         <div className={styles.formGroup}>
-          <label className={styles.label} htmlFor="senha">
-            Senha de Acesso:
-          </label>
+          <label className={styles.label}>Senha:</label>
           <input
             className={styles.input}
             type="password"
-            id="senha"
             name="senha"
             value={farmacia.senha}
             onChange={handleChange}
@@ -145,25 +119,16 @@ export default function CadastroFarmacia() {
           />
         </div>
 
-        {/* 🖼️ Campo de Logo (arquivo) */}
         <div className={styles.formGroup}>
-          <label className={styles.label} htmlFor="logo">
-            Logo:
-          </label>
+          <label className={styles.label}>Logo:</label>
           <input
             className={styles.input}
             type="file"
-            id="logo"
-            name="logo"
             accept="image/*"
             onChange={handleFileChange}
           />
           {preview && (
-            <img
-              src={preview}
-              alt="Pré-visualização da logo"
-              className={styles.logoPreview}
-            />
+            <img src={preview} alt="Pré-visualização" className={styles.logoPreview} />
           )}
         </div>
 
