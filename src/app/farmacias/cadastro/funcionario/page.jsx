@@ -1,9 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import styles from "./funcionario.module.css";
 
 export default function CadastroFuncionarioPage() {
+  const router = useRouter(); // hook para redirecionamento
+
   const [form, setForm] = useState({
     nome: "",
     email: "",
@@ -19,6 +22,9 @@ export default function CadastroFuncionarioPage() {
     e.preventDefault();
     console.log("Dados enviados:", form);
     alert("Funcionário cadastrado com sucesso!");
+    
+    // Redireciona para outra página (ex: listagem de funcionários)
+    router.push("/produtos/medicamentos");
   };
 
   return (

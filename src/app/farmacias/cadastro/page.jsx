@@ -41,7 +41,7 @@ export default function CadastroFarmacia() {
     alert("Farmácia cadastrada com sucesso!");
 
     // Redireciona para o perfil
-    router.push("/farmacia/perfil");
+    router.push("/contato");
   };
 
   return (

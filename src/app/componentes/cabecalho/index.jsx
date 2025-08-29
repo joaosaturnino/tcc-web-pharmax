@@ -26,13 +26,13 @@ function Cabecalho() {
         </div>
         <nav className={styles.menuGrande}>
           <Link
-            href='/'
-            className={rota === '/' ? styles.active : ''}
+            href='/contato'
+            className={rota === '/contato' ? styles.active : ''}
           >Home</Link>
           <Link
             href='/produtos/medicamentos'
             className={rota === '/produtos/medicamentos' ? styles.active : ''}
-          >Cadastros</Link>
+          >Controle</Link>
           <Link
             href='/sobre'
             className={rota === '/sobre' ? styles.active : ''}
@@ -54,13 +54,13 @@ function Cabecalho() {
         <Link
           href='/'
           onClick={ativaMenu}
-          className={rota === '/' ? styles.active : ''}
+          className={rota === './contato' ? styles.active : ''}
         >Home</Link>
         <Link
           href='/produtos/medicamentos'
           onClick={ativaMenu}
           className={rota === '/produtos/medicamentos' ? styles.active : ''}
-        >Produtos</Link>
+        >Controle</Link>
         <Link
           href='/sobre'
           onClick={ativaMenu}

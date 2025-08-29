@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import style from './page.module.css';
-import Slider from '../componentes/slider'; // Importe o componente Slider
+import Slider from './componentes/slider'; // Importe o componente Slider
 
 
 export default function PaginaInicial() {

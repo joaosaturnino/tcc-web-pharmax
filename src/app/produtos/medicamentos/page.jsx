@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import styles from "../../../app/medicamentos/cadastro/cadastro.module.css";
+// import Cabecalho from "./componentes/cabecalho";
 
 const imagemPadrao = "https://via.placeholder.com/60x60?text=Foto";
 
@@ -56,7 +57,7 @@ function ListagemMedicamentos() {
 
   return (
     <div className={styles.containermed}>
-      <h1 className={styles.titulo}>Medicamentos Cadastrados</h1>
+      <h1 className={styles.titulo}>Painel de Controle</h1>
       <div
         style={{
           display: "flex",
