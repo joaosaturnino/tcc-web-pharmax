@@ -1,69 +1,13 @@
-"use client";
+// app/page.jsx
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
-import styles from "./page.module.css";
+import { redirect } from 'next/navigation';
 
-export default function Login() {
-  const router = useRouter();
-  const [email, setEmail] = useState("");
-  const [senha, setSenha] = useState("");
+export default function Home() {
+  // Redireciona o usuário da rota '/' para '/login'
+  redirect('/home');
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (email && senha) {
-      localStorage.setItem(
-        "farmacia",
-        JSON.stringify({ email, senha, nome: "Minha Farmácia" })
-      );
-      alert("Login realizado com sucesso!");
-      router.push("/usuario/perfil");
-    } else {
-      alert("Preencha todos os campos!");
-    }
-  };
-
-  return (
-    <div className={styles.container}>
-      <h1 className={styles.titulo}>Login</h1>
-      <form className={styles.form} onSubmit={handleSubmit}>
-        <div className={styles.formGroup}>
-          <label className={styles.label}>E-mail</label>
-          <input
-            type="email"
-            className={styles.input}
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Digite seu e-mail"
-            required
-          />
-        </div>
-        <div className={styles.formGroup}>
-          <label className={styles.label}>Senha</label>
-          <input
-            type="password"
-            className={styles.input}
-            value={senha}
-            onChange={(e) => setSenha(e.target.value)}
-            placeholder="Digite sua senha"
-            required
-          />
-        </div>
-        <button type="submit" className={styles.botao}>
-          Entrar
-        </button>
-
-        <p className={styles.linkCadastro}>
-          Não tem conta?{" "}
-          <span
-            onClick={() => router.push("/farmacias/cadastro")}
-            className={styles.link}
-          >
-            Cadastre-se
-          </span>
-        </p>
-      </form>
-    </div>
-  );
+  // Como o redirecionamento acontece no servidor,
+  // nada abaixo será renderizado.
+  // Você pode retornar null ou um componente de carregamento.
+  return null;
 }

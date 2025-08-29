@@ -26,21 +26,9 @@ function Cabecalho() {
         </div>
         <nav className={styles.menuGrande}>
           <Link
-            href='/home'
-            className={rota === '/home' ? styles.active : ''}
-          >Home</Link>
-          <Link
-            href='/produtos/medicamentos'
-            className={rota === '/produtos/medicamentos' ? styles.active : ''}
-          >Controle</Link>
-          <Link
-            href='/sobre'
-            className={rota === '/sobre' ? styles.active : ''}
-          >Sobre</Link>
-          <Link
-            href='/usuario/perfil'
-            className={rota === '/usuario/perfil' ? styles.active : ''}
-          >Perfil</Link>
+            href='/index'
+            className={rota === '/index' ? styles.active : ''}
+          >Empresa</Link>
         </nav>
         <div className={styles.menuMobile}>
           <MdMenu onClick={ativaMenu} className={styles.icon} id="logo" />
@@ -54,7 +42,7 @@ function Cabecalho() {
         <Link
           href='/'
           onClick={ativaMenu}
-          className={rota === './home' ? styles.active : ''}
+          className={rota === './contato' ? styles.active : ''}
         >Home</Link>
         <Link
           href='/produtos/medicamentos'

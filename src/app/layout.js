@@ -6,8 +6,9 @@ import "../styles/reset.css";
 import "../styles/globals.css";
 
 import Cabecalho from "./componentes/cabecalho";
+import CabecalhoSecundario from "./componentes/cabecalhoSecundario";
+import CabecalhoTerciario from "./componentes/cabecalhoTerciario"; // 1. Importe o terceiro cabeçalho
 import Rodape from "./componentes/rodape";
-
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,21 +20,30 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// export const metadata = {
-//   title: "Pharma-X",
-//   description: "Sistema de Busca e Comparação de Preços de Medicamentos",
-// };
-
 export default function RootLayout({ children }) {
   const pathname = usePathname();
 
-  const isLogin = pathname === "/usuario/login";
+  // 2. Defina as rotas para cada cabeçalho
+  const useSecondaryHeader = ["/home"].includes(pathname);
+  const useThirdHeader = ["/index", "/farmacias/cadastro"].includes(pathname); // ✅ Adicione as rotas do terceiro cabeçalho aqui
+
+  // Função para renderizar o cabeçalho correto
+  const renderHeader = () => {
+    if (useThirdHeader) {
+      return <CabecalhoTerciario />;
+    }
+    if (useSecondaryHeader) {
+      return <CabecalhoSecundario />;
+    }
+    return <Cabecalho />; // Cabeçalho padrão
+  };
+
   return (
-    <html lang="pt-br">
+    <html lang="pt-BR">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {!isLogin && <Cabecalho />}
-        {children}
-        {!isLogin && <Rodape />}
+        {renderHeader()} {/* 3. Lógica de renderização atualizada */}
+        <main>{children}</main>
+        <Rodape />
       </body>
     </html>
   );

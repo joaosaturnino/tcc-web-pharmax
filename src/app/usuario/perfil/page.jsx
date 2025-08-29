@@ -24,7 +24,7 @@ export default function PerfilFarmacia() {
 
   const handleLogout = () => {
     localStorage.removeItem("farmacia");
-    router.push("/");
+    router.push("../../home");
   };
 
   const handleEdit = () => setEditando(true);
