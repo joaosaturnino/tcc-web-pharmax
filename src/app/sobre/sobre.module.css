@@ -9,10 +9,10 @@
 }
 
 .title {
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   text-align: center;
   margin-bottom: 1.5rem;
-  color: #2e7d32;
+  color: #27408B;
 }
 
 .card {
@@ -27,7 +27,7 @@
 
 .card p {
   margin: 0;
-  font-size: 1rem;
+  font-size: 1.6rem;
   color: #333;
 }
 

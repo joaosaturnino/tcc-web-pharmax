@@ -11,7 +11,7 @@
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
   text-align: center;
-  color: #1976d2;
+  color: #27408B;
 }
 
 .form {
@@ -39,7 +39,7 @@
 
 .botao {
   padding: 0.8rem;
-  background: #1976d2;
+  background: #458B00;
   color: #fff;
   font-size: 1.5rem;
   border: none;
@@ -48,7 +48,7 @@
 }
 
 .botao:hover {
-  background: #145ea8;
+  background: #006400;
 }
 
 .logoPreview {

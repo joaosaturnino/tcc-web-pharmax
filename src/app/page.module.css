@@ -13,7 +13,7 @@
   font-size: 28px;
   font-weight: 700;
   margin-bottom: 25px;
-  color: #6200ea;
+  color: #458b00;
 }
 
 .form {
@@ -53,13 +53,13 @@
   border: none;
   border-radius: 8px;
   color: #fff;
-  background-color: #6200ea;
+  background-color: #458b00;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .botao:hover {
-  background-color: #3700b3;
+  background-color: #006400;
   transform: translateY(-1px);
 }
 
@@ -71,7 +71,7 @@
 }
 
 .link {
-  color: #6200ea;
+  color: #458b00;
   cursor: pointer;
   font-weight: 600;
 }
