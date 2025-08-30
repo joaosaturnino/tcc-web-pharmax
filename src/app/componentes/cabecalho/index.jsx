@@ -25,10 +25,10 @@ function Cabecalho() {
           <img src="/temp/LogoEscrita.png" alt="Logo PharmaX" className={styles.logoImg} />
         </div>
         <nav className={styles.menuGrande}>
-          <Link
+          {/* <Link
             href='/home'
             className={rota === '/home' ? styles.active : ''}
-          >Home</Link>
+          >Home</Link> */}
           <Link
             href='/produtos/medicamentos'
             className={rota === '/produtos/medicamentos' ? styles.active : ''}
@@ -51,11 +51,11 @@ function Cabecalho() {
         className={mobile === false ? styles.menuMobileExpandidon : styles.menuMobileExpandidos}
         id="mostraOpMobile"
       >
-        <Link
+        {/* <Link
           href='/'
           onClick={ativaMenu}
           className={rota === './home' ? styles.active : ''}
-        >Home</Link>
+        >Home</Link> */}
         <Link
           href='/produtos/medicamentos'
           onClick={ativaMenu}

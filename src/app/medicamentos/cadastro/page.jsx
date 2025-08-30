@@ -1,6 +1,7 @@
 'use client';
 
-import { use, useState } from 'react';
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import styles from './cadastro.module.css';
 
 function CadastroMedicamento() {
@@ -11,11 +12,16 @@ function CadastroMedicamento() {
   const [forma, setForma] = useState('');
   const [descricao, setDescricao] = useState('');
   const [preco, setPreco] = useState('');
+  const [laboratorio, setLaboratorio] = useState('');
+  const router = useRouter();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Aqui você pode adicionar a lógica para enviar os dados para o backend
-    console.log({ nome, dosagem, preco, descricao });
+    console.log({ nome, dosagem, preco, descricao, quantidade, tipo, forma, laboratorio });
+    
+    // Redireciona para a página de listagem de medicamentos após o cadastro
+    router.push('/produtos/medicamentos');
   };
 
   return (
@@ -120,7 +126,7 @@ function CadastroMedicamento() {
               <option value="19">Spray</option>
               <option value="20">Gotas Nasais</option>
               <option value="21">Colírios</option>
-              <option value="22">Pomadas Oftámilcas</option>
+              <option value="22">Pomadas Oftálmicas</option>
               <option value="23">Gotas Auriculares ou Otológicas</option>
               <option value="24">Pomadas Auriculares</option>
               <option value="25">Aerosol</option>
@@ -131,11 +137,15 @@ function CadastroMedicamento() {
             </select>
         </div>
         
-        
-
         <div className={styles.formGroup}>
           <label className={styles.label} htmlFor ="laboratorio">Laboratório:</label>
-          <select id="laboratorio" name="laboratorio" required>
+          <select 
+            id="laboratorio" 
+            name="laboratorio" 
+            required
+            value={laboratorio}
+            onChange={(e) => setLaboratorio(e.target.value)}
+          >
               <option value="">Selecione o laboratório</option>
               <option value="1">Neo Química</option>
               <option value="2">EMS</option> 
@@ -172,7 +182,6 @@ function CadastroMedicamento() {
         <div className={styles.formGroup}>
           <label className={styles.label} htmlFor="imagem">Imagem:</label>
           <input type="file" id="imagem" name="imagem" accept="image/*" />
-          
         </div>
         
         <button type="submit" className={styles.bottao}>Cadastrar</button>

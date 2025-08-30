@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import styles from "../../../app/medicamentos/cadastro/cadastro.module.css";
 // import Cabecalho from "./componentes/cabecalho";
 
-const imagemPadrao = "https://via.placeholder.com/60x60?text=Foto";
+const imagemPadrao = "https://www.institutoaron.com.br/static/img/large/c28a030a59bae1283321c340cdc846df.webp";
 
 // Util para formatar preço em BRL com fallback seguro
 const currency =
@@ -37,7 +37,7 @@ const medicamentosIniciais = [
     laboratorio: "Neo Química",
     preco: 8.9, // <-- ADICIONADO
     imagem:
-      "https://images.unsplash.com/photo-1511174511562-5f97f4f4e0c8?auto=format&fit=facearea&w=60&h=60",
+      "",
   },
 ];
 
