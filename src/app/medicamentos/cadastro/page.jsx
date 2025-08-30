@@ -185,6 +185,10 @@ function CadastroMedicamento() {
         </div>
         
         <button type="submit" className={styles.bottao}>Cadastrar</button>
+
+        <button type="button" className={styles.bottao1} onClick={() => router.back()}>
+          Cancelar
+        </button>
       </form>
     </div>
   );

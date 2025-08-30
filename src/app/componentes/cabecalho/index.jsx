@@ -33,14 +33,16 @@ function Cabecalho() {
             href='/produtos/medicamentos'
             className={rota === '/produtos/medicamentos' ? styles.active : ''}
           >Controle</Link>
-          <Link
-            href='/sobre'
-            className={rota === '/sobre' ? styles.active : ''}
-          >Sobre</Link>
+          
           <Link
             href='/usuario/perfil'
             className={rota === '/usuario/perfil' ? styles.active : ''}
           >Perfil</Link>
+
+          <Link
+            href='/sobre'
+            className={rota === '/sobre' ? styles.active : ''}
+          >Sobre</Link>
         </nav>
         <div className={styles.menuMobile}>
           <MdMenu onClick={ativaMenu} className={styles.icon} id="logo" />

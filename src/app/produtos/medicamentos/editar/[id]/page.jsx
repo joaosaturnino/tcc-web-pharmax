@@ -257,6 +257,10 @@ export default function EditarMedicamento() {
         <button type="submit" className={styles.bottao}>
           Salvar Alterações
         </button>
+        <br/>
+        <button type="button" className={styles.bottao1} onClick={() => router.back()}>
+          Cancelar
+        </button>
       </form>
     </div>
   );

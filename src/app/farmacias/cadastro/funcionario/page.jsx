@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import styles from "./funcionario.module.css";
+import styles1 from "../../../medicamentos/cadastro/cadastro.module.css";
 
 export default function CadastroFuncionarioPage() {
   const router = useRouter(); // hook para redirecionamento
@@ -66,6 +67,9 @@ export default function CadastroFuncionarioPage() {
 
         <button type="submit" className={styles.button}>
           Salvar
+        </button>
+        <button type="button" className={styles1.bottao1} onClick={() => router.back()}>
+          Cancelar
         </button>
       </form>
     </div>
