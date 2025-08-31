@@ -12,14 +12,12 @@ export default function CadastroFuncionarioPage() {
     nome: "",
     email: "",
     telefone: "",
-    cargo: "",
     cpf: "",
     dataNascimento: "",
     endereco: "",
-    salario: "",
-    dataAdmissao: "",
-    turno: "",
-    especialidade: ""
+    usuario: "",
+    senha: "",
+    nivelAcesso: "",
   });
 
   const handleChange = (e) => {
@@ -28,9 +26,7 @@ export default function CadastroFuncionarioPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // aqui você pode enviar para API ou salvar localStorage
     console.log("Dados enviados:", form);
-    // exemplo: redireciona para lista de funcionarios
     router.push("/funcionarios");
   };
 
@@ -241,94 +237,85 @@ export default function CadastroFuncionarioPage() {
                   </div>
                 </div>
 
-                {/* Informações Profissionais */}
+                {/* Informações de Acesso */}
                 <div className={styles.formSection}>
                   <h3 className={styles.sectionTitle}>
-                    <span className={styles.sectionIcon}>💼</span>
-                    Informações Profissionais
+                    <span className={styles.sectionIcon}>🔐</span>
+                    Acesso ao Sistema
                   </h3>
 
                   <div className={styles.formGroup}>
                     <label className={styles.inputLabel}>
-                      Cargo *
-                    </label>
-                    <select
-                      className={styles.modernInput}
-                      name="cargo"
-                      value={form.cargo}
-                      onChange={handleChange}
-                      required
-                    >
-                      <option value="">Selecione o cargo</option>
-                      <option value="Farmacêutico">Farmacêutico</option>
-                      <option value="Atendente">Atendente</option>
-                      <option value="Gerente">Gerente</option>
-                      <option value="Balconista">Balconista</option>
-                      <option value="Entregador">Entregador</option>
-                      <option value="Estoquista">Estoquista</option>
-                    </select>
-                  </div>
-
-                  <div className={styles.formGroup}>
-                    <label className={styles.inputLabel}>
-                      Especialidade
+                      Nome de Usuário *
                     </label>
                     <input
                       className={styles.modernInput}
                       type="text"
-                      name="especialidade"
-                      value={form.especialidade}
+                      name="usuario"
+                      value={form.usuario}
                       onChange={handleChange}
-                      placeholder="Especialização profissional"
+                      placeholder="Digite o nome de usuário"
+                      required
                     />
-                  </div>
-
-                  <div className={styles.formRow}>
-                    <div className={styles.formGroup}>
-                      <label className={styles.inputLabel}>
-                        Salário (R$)
-                      </label>
-                      <input
-                        className={styles.modernInput}
-                        type="number"
-                        name="salario"
-                        value={form.salario}
-                        onChange={handleChange}
-                        placeholder="0,00"
-                        step="0.01"
-                      />
-                    </div>
-
-                    <div className={styles.formGroup}>
-                      <label className={styles.inputLabel}>
-                        Data de Admissão
-                      </label>
-                      <input
-                        className={styles.modernInput}
-                        type="date"
-                        name="dataAdmissao"
-                        value={form.dataAdmissao}
-                        onChange={handleChange}
-                      />
-                    </div>
                   </div>
 
                   <div className={styles.formGroup}>
                     <label className={styles.inputLabel}>
-                      Turno de Trabalho
+                      Senha *
+                    </label>
+                    <input
+                      className={styles.modernInput}
+                      type="password"
+                      name="senha"
+                      value={form.senha}
+                      onChange={handleChange}
+                      placeholder="Digite a senha"
+                      required
+                    />
+                  </div>
+
+                  <div className={styles.formGroup}>
+                    <label className={styles.inputLabel}>
+                      Nível de Acesso *
                     </label>
                     <select
                       className={styles.modernInput}
-                      name="turno"
-                      value={form.turno}
+                      name="nivelAcesso"
+                      value={form.nivelAcesso}
                       onChange={handleChange}
+                      required
                     >
-                      <option value="">Selecione o turno</option>
-                      <option value="Manhã">Manhã (08:00 - 12:00)</option>
-                      <option value="Tarde">Tarde (13:00 - 17:00)</option>
-                      <option value="Noite">Noite (18:00 - 22:00)</option>
-                      <option value="Integral">Integral (08:00 - 18:00)</option>
+                      <option value="">Selecione o nível de acesso</option>
+                      <option value="Administrador">Administrador</option>
+                      <option value="Gerente">Gerente</option>
+                      <option value="Supervisor">Supervisor</option>
+                      <option value="Funcionário">Funcionário</option>
+                      <option value="Visitante">Visitante (Somente leitura)</option>
                     </select>
+                  </div>
+
+                  <div className={styles.formGroup}>
+                    <label className={styles.inputLabel}>
+                      Permissões Especiais
+                    </label>
+                    <div className={styles.checkboxGroup}>
+                      <label className={styles.checkboxLabel}>
+                        <input type="checkbox" name="acessoRelatorios" />
+                        <span className={styles.checkboxText}>Acesso a relatórios</span>
+                      </label>
+                      <label className={styles.checkboxLabel}>
+                        <input type="checkbox" name="acessoEstoque" />
+                        <span className={styles.checkboxText}>Gerenciar estoque</span>
+                      </label>
+                      <label className={styles.checkboxLabel}>
+                        <input type="checkbox" name="acessoFinanceiro" />
+                        <span className={styles.checkboxText}>Acesso financeiro</span>
+                      </label>
+                      <label className={styles.checkboxLabel}>
+                        <input type="checkbox" name="acessoConfiguracoes" />
+                        <span className={styles.checkboxText}>Configurações do sistema</span>
+                      </label>
+                    </div>
                   </div>
                 </div>
               </div>
