@@ -25,7 +25,11 @@ function Cabecalho() {
           <img src="/temp/LogoEscrita.png" alt="Logo PharmaX" className={styles.logoImg} />
         </div>
         <nav className={styles.menuGrande}>
-          
+          <Link
+          href='/sobre'
+          onClick={ativaMenu}
+          className={rota === '/sobre' ? styles.active : ''}
+        >Sobre</Link>
         </nav>
         <div className={styles.menuMobile}>
           <MdMenu onClick={ativaMenu} className={styles.icon} id="logo" />
