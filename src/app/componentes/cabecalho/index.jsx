@@ -25,14 +25,18 @@ function Cabecalho() {
           <img src="/temp/LogoEscrita.png" alt="Logo PharmaX" className={styles.logoImg} />
         </div>
         <nav className={styles.menuGrande}>
-          {/* <Link
-            href='/home'
-            className={rota === '/home' ? styles.active : ''}
-          >Home</Link> */}
+          <Link
+            href='/farmacias/favoritos'
+            className={rota === '/farmacias/favoritos' ? styles.active : ''}
+          >Home</Link>
           <Link
             href='/produtos/medicamentos'
             className={rota === '/produtos/medicamentos' ? styles.active : ''}
           >Controle</Link>
+          <Link
+            href='/laboratorio/lista'
+            className={rota === '/laboratorio/lista' ? styles.active : ''}
+          >Laboratório</Link>
           
           <Link
             href='/usuario/perfil'

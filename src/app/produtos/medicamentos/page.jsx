@@ -13,6 +13,8 @@ const currency =
     ? new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" })
     : { format: (v) => `R$ ${Number(v).toFixed(2)}` };
 
+    
+
 const medicamentosIniciais = [
   {
     id: 1,
@@ -56,7 +58,10 @@ function ListagemMedicamentos() {
   };
 
   return (
+
+    
     <div className={styles.containermed}>
+      
       <h1 className={styles.titulo}>Painel de Controle</h1>
       <div
         style={{
@@ -89,6 +94,7 @@ function ListagemMedicamentos() {
         >
           + Novo Medicamento
         </Link>
+        
       </div>
       {medicamentos.length === 0 ? (
         <p style={{ textAlign: "center" }}>Nenhum medicamento cadastrado.</p>
